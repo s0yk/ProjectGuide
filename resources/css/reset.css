@@ -1,0 +1,116 @@
+/****************************************************
+	File name   reset.css
+	Writer      sykim
+	Date        2025. 02. 27.
+*****************************************************/
+
+@charset "utf-8";
+
+/* WEB FONT */
+@font-face {
+    font-weight: 800;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV ExtraBold'), url(../../fonts/PretendardGOV-ExtraBold.woff2) format('woff2'), url(../fonts/PretendardGOV-ExtraBold.woff) format('woff');
+}
+@font-face {
+    font-weight: 700;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV Bold'), url(../fonts/PretendardGOV-Bold.woff2) format('woff2'), url(../fonts/PretendardGOV-Bold.woff) format('woff');
+}
+@font-face {
+    font-weight: 600;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV SemiBold'), url(../fonts/PretendardGOV-SemiBold.woff2) format('woff2'), url(../fonts/PretendardGOV-SemiBold.woff) format('woff');
+}
+@font-face {
+    font-weight: 500;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV Medium'), url(../fonts/PretendardGOV-Medium.woff2) format('woff2'), url(../fonts/PretendardGOV-Medium.woff) format('woff');
+}
+@font-face {
+    font-weight: 400;
+    font-family: 'Pretendard GOV';
+    font-display: swap;
+    src: local('Pretendard GOV Regular'), url(../fonts/PretendardGOV-Regular.woff2) format('woff2'), url(../fonts/PretendardGOV-Regular.woff) format('woff');
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+    margin: 0; padding: 0;
+    border: 0;
+    color: inherit;
+    font-size: 100%;
+    font-size: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* size init */
+html {
+    height: 100%;
+    font-size: 62.5%;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Basic Settings */
+body {
+    color: #1d1d1d;
+    font: 1.7rem/1.5 "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    min-height: 100vh;
+}
+select, textarea, pre {
+    color: inherit;
+    font-family: "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+}
+
+pre { white-space: pre-wrap; }
+fieldset, img { max-width:100%; border: 0; }
+select,input,img, button {vertical-align:middle; }
+address { font-style: normal; }
+ol, ul, li { list-style: none; }
+blockquote, q { quotes: none; } 
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+em { font-style: normal; }
+
+summary::-webkit-details-marker { display: none; } 
+summary { list-style-type: none; }
+
+button { cursor: pointer; }
+textarea { border:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;background-color:transparent;word-break:keep-all;word-wrap:break-word; width: 100%; }
+button, input { padding: 0; border: 0; background: inherit; font-family: inherit; -webkit-border-radius:0;border-radius:0; }

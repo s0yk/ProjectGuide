@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    /* Table Common */
+    table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    caption {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        border: 0;
+        clip: rect(0 0 0 0);
+    }
+    :is(.tbl-row, .tbl-col) > table th {
+        background-color: #e9e9e9;
+    }
+    :is(.tbl-row, .tbl-col) :is(th,td) {
+        height: 40px;
+        vertical-align: middle;
+    }
+    
+    /* Table Row */
+    .tbl-row > table th {
+        border-right: 1px solid #333;
+        text-align: left;
+    }
+    .tbl-row > table :is(th, td){
+        border-top: 1px solid #333;
+        padding: 8px; 
+    }
+    .tbl-row > table tr:last-child :is(th, td){
+        border-bottom: 1px solid #333;
+    }
+
+    /* Table Col */
+    .tbl-col > table thead th {
+        border-top: 2px solid #333;
+        border-right: 1px solid #333;
+    }
+    .tbl-col > table tbody td {
+        border: 1px solid #333;
+        border-left: none;
+        text-align: center;
+    } 
+    .tbl-col > table tbody tr td:last-child,
+    .tbl-col > table thead tr th:last-child {
+        border-right: none;
+    }
+</style>
+<style>
+    .tlt {margin-bottom: 20px;}
+    .tlt:not(:first-of-type){margin-top: 20px;}
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title"><span class="cate"></span>Table Guide</h2>
+            <div class="dec">
+                <p>테이블 적용 방법</p>
+                <p>테이블은 행이 제목인 입력형과 열이 제목인 리스트형으로 분류합니다.</p>
+                <p>각 테이블의 클래스 명은<code>tbl-row</code>, <code>tbl-col</code>로 작성합니다.</p>
+                <p>전용 태그로 <code>caption</code>(테이블 설명), <code>colgroup</code>(열 정렬) 을사용해야합니다.</p>
+                <p>
+                    <code>col</code>태그는 인라인<code>style</code>로만 width를 제어해야 하며, 
+                    아무것도 기입하지 않을 시 <code>width</code>는 auto로 취급됩니다.
+                </p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <div class="tlt">
+                    <b>- row-table</b>
+                </div>
+                <!-- Table Row -->
+                <div class="tbl-row">
+                    <table>
+                        <caption>테이블 설명</caption>
+                        <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: auto;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">제목1</th>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">제목2</th>
+                                <td>내용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="tlt">
+                    <b>- col-table</b>
+                </div>
+                <!-- Table Col -->
+                <div class="tbl-col">
+                    <table>
+                        <caption>테이블 설명</caption>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">제목1</th>
+                                <th scope="col">제목2</th>
+                                <th scope="col">제목3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>내용1</td>
+                                <td>내용2</td>
+                                <td>내용3</td>
+                            </tr>
+                            <tr>
+                                <td>내용4</td>
+                                <td>내용5</td>
+                                <td>내용6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

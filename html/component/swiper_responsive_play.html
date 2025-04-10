@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ITPUB :: Publishing Guide</title>
+        
+        <meta property="og:image" content="./resources/images/img/thumnail.png">
+        <meta property="og:title" content="아이티펍 프로젝트 가이드">
+        <meta property="og:description" content="ITPUB Project Publishing Guide">
+    
+        <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../resources/css/reset.css">
+        <link rel="stylesheet" href="../../resources/css/guide.css">
+        <link rel="stylesheet" href="../../resources/css/style.css">
+    
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="../../resources/js/prism.js"></script>
+        <script src="../../resources/js/sub_guide.js"></script>
+    
+        <!-- SWIPER PLUGIN -->
+        <link rel="stylesheet" href="../../resources/css/swiper-bundle.min.css">
+        <script src="../../resources/js/swiper-bundle.min.js"></script>
+    </head>
+    <style>
+        .my-swiper .swiper-slide {
+            height: 200px;
+            align-content: center;
+            text-align: center;
+        }
+        .my-swiper .swiper-slide:nth-child(1){
+            background-color: lightgreen;
+        }
+        .my-swiper .swiper-slide:nth-child(2){
+            background-color: lightgoldenrodyellow;
+        }
+        .my-swiper .swiper-slide:nth-child(3){
+            background-color: lightcoral;
+        }
+        .my-swiper .swiper-slide:nth-child(4){
+            background-color: lightblue;
+        }
+        .my-swiper .swiper-slide:nth-child(5){
+            background-color: lightcyan;
+        }
+        .my-swiper .swiper-slide:nth-child(6){
+            background-color: lightsalmon;
+        }
+    </style>
+
+    <body>
+        <div id="guide-wrap">
+            <header id="guide-header">
+                <h2 class="title">
+                    <span class="cate"></span>
+                    스와이퍼 반응형 - PC에서만 활성화
+                </h2>
+                <div class="dec">
+                    <p>
+                        해당 예제는 해상도에 따라 동적으로 스와이퍼를 추가 및 삭제하는 예제입니다. <br>
+                        768 이하로 해상도가 줄어들 경우 스와이퍼가 동작하지 않습니다.
+                    </p>
+                    <p>
+                        해당 동작 구현을 위해 CSS display : none을 사용할 수 있지만 <br>
+                        동일 요소를 두개 만드는 것은 좋지못한 방법이기에 Js로 제어합니다.
+                    </p> 
+                </div>
+            </header>
+            <section id="guide-contents">
+                    <section class="my-swiper">
+                        <div class="swiper swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    1
+                                </div>
+                                <div class="swiper-slide">
+                                    2
+                                </div>
+                                <div class="swiper-slide">
+                                    3
+                                </div>
+                                <div class="swiper-slide">
+                                    4
+                                </div>
+                                <div class="swiper-slide">
+                                    5
+                                </div>
+                                <div class="swiper-slide">
+                                    6
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </section>
+            </section>
+            <section id="guide-code">
+                <div class="html">
+                    <div class="title-wrap">
+                        <h3 class="title">HTML</h3>
+                        <button type="button" class="copy-btn">COPY</button>
+                    </div>
+                    <code class="language-html inner-code">
+                    </code>
+                </div>
+                <div class="script-code-box language-javascript">
+                    <div class="title-wrap">
+                        <h3 class="title">Java Script</h3>
+                        <button type="button" class="copy-btn">COPY</button>
+                    </div>
+                    <code class="language-js inner-code">
+                    </code>
+                </div>
+            </section>
+        </div>
+        <script>
+            /* Mobile Swiper Init */
+            let mySwiper = undefined; // 플래그 편수
+        
+            function initMobileSwiper() {
+                let ww = $(window).width();
+        
+                // 리사이즈 시 + 정의되지 않았을 때 한번만 실행
+                if (ww >= 768 && mySwiper  === undefined){
+                    mySwiper = new Swiper('.my-swiper .swiper',{
+                        slidesPerView : 3,
+                        pagination : {
+                            el : ".my-swiper .swiper-pagination",
+                            clickable: true
+                        },
+                    })
+                } else if (ww < 768 && mySwiper != undefined){
+                    alert('스와이퍼 해제')
+
+                    // 정의된 스와이퍼 해제
+                    mySwiper.destroy();
+                    mySwiper = undefined;
+                }
+            }
+            
+            $(window).on('load resize', function(){
+                initMobileSwiper();
+            })
+        </script>
+    </body>
+</html>
+
+

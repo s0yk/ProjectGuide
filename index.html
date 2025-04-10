@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB Project Guide</title>
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="./resources/images/img/favicon.ico">
+    <link rel="stylesheet" href="./resources/css/reset.css">
+    <link rel="stylesheet" href="./resources/css/guide.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body id="index-guide">
+    <div id="wrap">
+        <header>
+            <div class="index-header-inner">
+                <div class="tlt-conts">
+                    <h2 class="tlt">ITPUB Project Guide</h2>
+                </div>
+                <nav class="index-nav">
+                    <ul class="index-nav-list">
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-base">기본정책</a>
+                        </li>
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-structure">파일 / 폴더 규칙</a>
+                        </li>
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-communication">포지션 별 문의 & 업무 협의</a>
+                        </li>
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-process">프로젝트 진행 프로세스</a>
+                        </li>
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-guide">규칙 가이드</a>
+                        </li>
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-ally">웹 접근성 체크리스트</a>
+                        </li>
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-img-naming">이미지 네이밍 규칙</a>
+                        </li>
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-class-naming">클래스 네이밍 규칙</a>
+                        </li>
+                        <li class="index-nav-item">
+                            <a class="index-nav-link" href="#policy-mediaquery">미디어쿼리</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="search-wrap" style="display: none;">
+                <form class="search-form">
+                        <input type="text" id="search" placeholder="검색어를 입력해주세요.">
+                        <button class="search-btn" id="search-confirm" disabled="">검색</button>
+                        <button class="btn-function is-active" id="slowModeBtn">검색모드</button>
+                        <button class="btn-function" id="fastModeBtn">필터모드</button>
+                </form>
+            </div>
+        </header>
+        <div id="container">
+            <aside class="sidebar">
+                <nav>
+                    <h2 class="sr-only">카테고리</h2>
+                    <ul class="sidebar-list">
+                        <li class="sidebar-item is-active index">
+                            <a href="./index.html">Guide</a>
+                        </li>
+                        <li class="sidebar-item base">
+                            <a href="./index_base.html">Base</a>
+                        </li>
+                        <li class="sidebar-item layout">
+                            <a href="./index_layout.html">Layout</a>
+                        </li>
+                        <li class="sidebar-item component">
+                            <a href="./index_component.html">Component</a>
+                        </li>
+                        <li class="sidebar-item dict">
+                            <a href="./index_dict.html">Dictionary</a>
+                        </li>
+                        <!-- 프린트 기능 비활성화 -->
+                        <!-- <li class="sidebar-item print">
+                            <button type="button" onclick="return printPage()">Print</button>
+                        </li> -->
+                    </ul>
+                </nav>
+            </aside>
+            <div class="table-wrap">
+                <table class="index-table">
+                    <caption id="policy-base">기본정책</caption>
+                    <colgroup>
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="10">프로젝트 환경</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">문서 및 버전</th>
+                            <td colspan="8">HTML5, CSS3, JavaScript</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">인코딩</th>
+                            <td colspan="8">UTF-8</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">웹 유형</th>
+                            <td colspan="8">PC, Mobile</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">크로스 브라우징</th>
+                            <td colspan="8">Chrome, Edge, Firefox, Opera, Safari</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" rowspan="3" class="bd-0">해상도 기준</th>
+                            <td colspan="2">PC</td>
+                            <td colspan="6">1920px</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Tablet</td>
+                            <td colspan="6">1025px</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Mobile</td>
+                            <td colspan="6">768px</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="index-table">
+                    <caption id="policy-structure">파일 / 폴더 규칙</caption>
+                    <colgroup>
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="2">분류폴더</th>
+                            <th colspan="2">서브폴더</th>
+                            <th colspan="2">파일명</th>
+                            <th colspan="4">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" rowspan="6">css</td>
+                            <td colspan="2"></td>
+                            <td colspan="2">
+                                reset.css
+                                <a class="btn-download" href="./archive/css/reset.css" download title="파일 다운로드">
+                                    파일 다운로드
+                                </a>
+                            </td>
+                            <td colspan="4">[스타일] 초기화</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">layout.css</td>
+                            <td colspan="4">[스타일] 레이아웃</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">common.css
+                                <a class="btn-download" href="./archive/css/common.css" download title="파일 다운로드">
+                                    파일 다운로드
+                                </a>
+                            </td>
+                            <td colspan="4">[스타일] 공통</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">style.css</td>
+                            <td colspan="4">[스타일] 기본 스타일</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">main.css</td>
+                            <td colspan="4">[스타일] 메인</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td colspan="2">mobile.css</td>
+                            <td colspan="4">[스타일] 모바일</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">js</td>
+                            <td colspan="2"></td>
+                            <td colspan="2">common.js</td>
+                            <td colspan="4">[스크립트] 공통</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" rowspan="4" class="bd-0">images</td>
+                            <td colspan="2">logo</td>
+                            <td colspan="2"></td>
+                            <td colspan="4">[이미지] 로고</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">img</td>
+                            <td colspan="2"></td>
+                            <td colspan="4">[이미지] 공통 이미지</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">ico</td>
+                            <td colspan="2"></td>
+                            <td colspan="4">[이미지] 아이콘</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">temp</td>
+                            <td colspan="2"></td>
+                            <td colspan="4">[이미지] 임시</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="index-table">
+                    <caption id="policy-communication">포지션 별 문의 & 업무 협의</caption>
+                    <colgroup>
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>포지션</th>
+                            <th>작업단계</th>
+                            <th>내용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 기획 -->
+                        <tr>
+                            <td rowspan="2">기획</td>
+                            <td>작업 전</td>
+                            <td class="desc-list">
+                                <p>WBS</p>
+                                <p>파일 공유 및 납기 방식</p>
+                                <p>크로스브라우징, 웹접근성 준수 여부</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>작업 중</td>
+                            <td class="desc-list">
+                                <p>검수 및 수정 요청 문의 방식 ex&#41; 구글시트</p>
+                            </td>
+                        </tr>
+                        <!-- 디자인 -->
+                        <tr>
+                            <td>디자인</td>
+                            <td>작업 전</td>
+                            <td class="desc-list">
+                                <p>스타일 가이드</p>
+                                <p>공통 컴포넌트 정의</p>
+                                <p>수정 요청 문의 방식 ex&#41; 피그마 코멘트, 엑셀 시트</p>
+                                <p>에셋 파일 공유 ex&#41; 로고, 아이콘</p>
+                            </td>
+                        </tr>
+                        <!-- 퍼블리싱 -->
+                        <tr>
+                            <td rowspan="3">퍼블리싱</td>
+                            <td>작업 전</td>
+                            <td class="desc-list">
+                                <p>깃허브 브랜치 관리 담당 정/부</p>
+                                <p>작업 분량 분담</p>
+                                <p>프로젝트 코드 컨벤션 수립 ex&#41; Prettier, PostCSS </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>작업 중</td>
+                            <td class="desc-list">
+                                <p>퍼블리싱 진척도 공유</p>
+                                <p>코드 검토 및 개선</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>작업 후</td>
+                            <td class="desc-list">
+                                <p>스타일시트 최적화</p>
+                                <p>퍼블리싱 소스 가이드 업데이트</p>
+                            </td>
+                        </tr>
+                        <!-- 개발 -->
+                        <tr>
+                            <td rowspan="3">개발</td>
+                            <td>작업 전</td>
+                            <td class="desc-list">
+                                <p>프레임워크 선정</p>
+                                <p>라이브러리 버전</p>
+                                <p>파일 경로 ex&#41; html, resource - css, js 등</p>
+                                <p>레이아웃 구조</p>
+                                <p>스크립트 작업 범위 * 탭, 스와이퍼 등 인터랙션 UI 제외</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>작업 중</td>
+                            <td class="desc-list">
+                                <p>AS-IS 활용 범위 (UI 스크립트)</p>
+                                <p>레이아웃 디버깅</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>작업 후</td>
+                            <td class="desc-list">
+                                <p>레이아웃 안정화</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="index-table">
+                    <caption id="policy-process">프로젝트 진행 프로세스</caption>
+                    <colgroup>
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="2">작업단계</th>
+                            <th colspan="4">기술 구현 항목</th>
+                            <th colspan="4">구현 항목별 코멘트</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2" rowspan="3">스토리보드 검토</th>
+                            <td colspan="4">UI/UX 기술 구현 가능 여부 검토</td>
+                            <td colspan="4">구현 어려울 시 대체 기술 기획자 협의</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" rowspan="2">UI/UX 접근성 제고 여부 검토</td>
+                            <td colspan="4">웹 컨텐츠 접근성 지침 2.1 을 기준으로 함</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">접근성 미제고시 UI/UX 접근성 제고 요청</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" rowspan="2">웹 리소스 구조화</th>
+                            <td colspan="4">리소스 폴더 구조 설계 및 생성</td>
+                            <td colspan="4" rowspan="2">개발자 협의</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">파일 네이밍 가이드 수립</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" rowspan="6">시안 검토</th>
+                            <td colspan="4">컨텐츠 분석 및 정보의 논리적 선형화</td>
+                            <td colspan="4" rowspan="3">웹 컨텐츠 접근성 지침 2.1 을 기준으로 함</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">디자인에 따라 구역 분할</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">논리구조에 따른 HTML 문서 구조화</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">디자인에 따라 구역 분할</td>
+                            <td colspan="4" rowspan="3">접근성 미제고시 시안 수정 요청</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">공통 CSS, JS 가이드 작성</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">디자인적 접근성 제고 여부 검토</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" rowspan="6">퍼블리싱</th>
+                            <td colspan="4">CSS 가이드 수립, 문서내 ID / class 구조화 및 정리</td>
+                            <td colspan="4" rowspan="3">W3C Markup Validator 이용</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">웹 표준, 웹접근성 지침을 기준으로 JavaScript 사용불가 환경 마크업 진행</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">마크업 유효성 검사</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">CSS 작성</td>
+                            <td colspan="4" rowspan="3">IE 11, Chrome, FireFox, Safari 등 Major 웹 브라우저 동작 테스트</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">브라우저 렌더링 화면과 시안 비교</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">JavaScript 오류 테스트</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" rowspan="4">산출물 최종 확인</th>
+                            <td colspan="4">브라우저 테스트</td>
+                            <td colspan="4" rowspan="2">Major 웹 브라우저 렌더링 및 동작 테스트</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">웹 표준 검사</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">문서의 논리적/의미론적 구조 수동 검사</td>
+                            <td colspan="4">
+                                <a class="link-underline" href="http://validator.kldp.org" target="_blank" title="새 창 이동">W3C Markup Validator</a> 이용 <br>
+                                <a class="link-underline" href="http://css-validator.kldp.org" target="_blank" title="새 창 이동">W3C CSS Validator</a> 이용
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">웹 접근성 최종 검토</td>
+                            <td colspan="4">정량 / 정성 평가 진행</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="index-table" id="policy-ally">
+                    <caption id="policy-ally">
+                        웹 접근성 체크리스트 <small class="index-table-small"><span class="col-red">*</span> 는 필수 체크 항목</small>
+                    </caption>
+                    <colgroup>
+                        <col style="width: 40%;">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>웹 접근성</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="must-label">
+                                    HTML, CSS validator을 통과했는가?
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="must-label">
+                                    본문 바로가기 및 스킵네비게이션을 제공하는가?
+                                </span>
+                            </td>
+                            <td>주메뉴 바로가기, 본문 가로가기 제공</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="must-label">
+                                    텍스트가 아닌 콘텐츠에 적절한 대체 콘텐츠가 제공이 되어 있는가?
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="must-label">
+                                    새창링크에 target= "_blank", title="새창 열림" 속성이 있는가?
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="must-label">
+                                    링크 및 마우스 이벤트 요소가 키보드 컨트롤로 모두 접근 가능한가?
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="must-label">
+                                    온라인 서식요소 (form , input)가 접근성 구조로 마크업 되어있는가?
+                                </span>
+                            </td>
+                            <td>
+                                label, title 제공
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="must-label">
+                                    slide에 이전, 다음, 일시정지 버튼을 제공하는가?
+                                </span>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                table 요소가 데이터 테이블로서 사용되며 접근성에 맞게 마크업 되어 있는가?
+                            </td>
+                            <td>
+                                scope="col", scope="row" 제공
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="index-table">
+                    <caption id="policy-guide">규칙 가이드 > 표준 규칙</caption>
+                    <colgroup>
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="10">Semantic Markup</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Tag</th>
+                            <th colspan="8">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2"><code>article</code></th>
+                            <td colspan="8">문서, 페이지, 애플리케이션, 또는 사이트 안에서 독립적으로 구분해 배포하거나 재사용할 수 있는 구획을 나타냅니다. 
+                                사용 예제로 게시판과 블로그 글, 매거진이나 뉴스 기사 등이 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>aside</code></th>
+                            <td colspan="8">문서의 주요 내용과 간접적으로만 연관된 부분을 나타냅니다. 주로 사이드바 혹은 콜아웃 박스로 표현합니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>detail</code></th>
+                            <td colspan="8">"열림" 상태일 때만 내부 정보를 보여주는 정보 공개 위젯을 생성합니다. 요약이나 레이블은 <code>summary</code> 요소를 통해 제공할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>figure</code></th>
+                            <td colspan="8">독립적인 콘텐츠를 표현합니다. <code>figcaption</code> 요소를 사용해 설명을 붙일 수 있습니다. 피규어, 설명, 콘텐츠는 하나의 단위로 참조됩니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>footer</code></th>
+                            <td colspan="8">가장 가까운 구획 콘텐츠나 구획 루트의 푸터를 나타냅니다. 푸터는 일반적으로 구획의 작성자, 저작권 정보, 관련 문서 등의 내용을 담습니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>header</code></th>
+                            <td colspan="8">소개 및 탐색에 도움을 주는 콘텐츠를 나타냅니다. 제목, 로고, 검색 폼, 작성자 이름 등의 요소도 포함할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>main</code></th>
+                            <td colspan="8">문서 <code>body</code>의 주요 콘텐츠를 나타냅니다. 주요 콘텐츠 영역은 문서의 핵심 주제나 앱의 핵심 기능에 직접적으로 연결됐거나 확장하는 콘텐츠로 이루어집니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>mark</code></th>
+                            <td colspan="8">현재 맥락에 관련이 깊거나 중요해 표시 또는 하이라이트한 부분을 나타냅니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>nav</code></th>
+                            <td colspan="8">문서의 부분 중 현재 페이지 내, 또는 다른 페이지로의 링크를 보여주는 구획을 나타냅니다. 자주 쓰이는 예제는 메뉴, 목차, 색인입니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>section</code></th>
+                            <td colspan="8">HTML 문서의 독립적인 구획을 나타내며, 더 적합한 의미를 가진 요소가 없을 때 사용합니다. 보통 <section>은 제목을 포함하지만, 항상 그런 것은 아닙니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>summary</code></th>
+                            <td colspan="8"><code>details</code> 요소의 공개 상자에 대한 요약, 캡션 또는 범례를 지정합니다. <code>summary</code> 요소를 클릭하면 상위 <code>details</code> 요소의 상태가 열리고 닫힙니다.</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"><code>time</code></th>
+                            <td colspan="8">시간의 특정 지점 또는 구간을 나타냅니다. datetime 특성의 값을 지정해 보다 적절한 검색 결과나, 알림 같은 특정 기능을 구현할 때 사용할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="10"></td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th colspan="10">특수기호 Entity name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="3">Character</th>
+                            <td>₩</td>
+                            <td>"</td>
+                            <td>&</td>
+                            <td><</td>
+                            <td>></td>
+                            <td> </td>
+                            <td>·</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Entity Name</th>
+                            <td><span>&</span>#8361;</td>
+                            <td><span>&</span>lt;</td>
+                            <td><span>&</span>amp;</td>
+                            <td><span>&</span>lt;</td>
+                            <td><span>&</span>gt;</td>
+                            <td><span>&</span>nbsp;</td>
+                            <td><span>&</span>middot;</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">참고 링크</th>
+                            <td colspan="7"><a href="https://symbl.cc/kr/html-entities/" target="_blank">HTML 엔티티(새 창 열기)</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="index-table">
+                    <caption id="policy-img-naming">이미지(image) 네이밍 규칙</caption>
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="2">기본 규칙</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="desc-list" colspan="2">
+                                <p>- 이미지 네이밍의 조합은 <span class="strong">카테고리_형태_의미_순서_상태</span>로 조합한다.</p> 
+                                <p>- 같은 이름의 이미지가 두 개 이상 존재 시 <span class="strong">숫자로 구분</span>한다.</p> 
+                                <p>- 이미지 네이밍은 <span class="strong">이미지 확장자 관계없이 순차 적용한다.</span> </p>
+                                <p>- 이미지 예약어에는 숫자, 영문소문자, 언더바(_)을 조합하여 사용할 수 있다.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>규칙</th>
+                            <th>예시</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>이미지 네이밍 조합</td>
+                            <td>
+                                ico_arrow_active.svg <br>
+                                ico_circle_tab_02_off.gif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>같은 이름의 이미지 존재 시</td>
+                            <td>ico_arrow_01.svg, ico_arrow_02.svg </td>
+                        </tr>
+                        <tr>
+                            <td>이미지 네이밍은 확장자 관계없이 순차적용</td>
+                            <td>btn_arr.gif, btn_arr_02.jpg</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="index-table">
+                    <caption id="policy-class-naming">클래스(class) 네이밍 및 스타일 선언 규칙</caption>
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="3">기본 규칙</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="desc-list" colspan="3">
+                                <p>- 네이밍은 <span class="strong">- (하이픈) 사용</span>을 기본으로 한다. </p>
+                                <p>- 네이밍에 <span class="strong">대문자를 사용하지 않는다.</span> </p>
+                                <p>- 하이픈(-)은 2개 이상의 단어를 조합할 때 사용한다.</p>
+                                <p>- 하이픈(-)을 이용해 4단계를 초과하여 사용하는 방법은 지양한다. </p>
+                                <p>- 다중 클래스 지정을 허용하나, <span class="strong">최대 4개 이상</span> 사용하지 않는다. </p>
+                                <p>- 다중 클래스 결합 선택자 사용 시 <span class="strong">포괄하는 요소의 순서대로</span> 기입한다.</p>
+                                <p>- 네이밍으로 <span class="strong">마크업 구조를 유추</span>할 수 있게 구성하고 클래스 상세도를 지나치게 높이지 않는다.</p> 
+                                <p>- CSS 최적화를 위해 가능한 속성값을 축약한다.</p>
+                                <p>- CSS 끝나는 지점에 세미콜론 ";"을 필수적으로 기입한다.</p> 
+                            </td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>규칙</th>
+                            <th>좋은 예시</th>
+                            <th>나쁜 예시</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <th>네이밍에 - (하이픈) 사용</th>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">.header-nav</span> {color : black;}
+                                    </code>
+                                </td>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">.header_nav</span> {color : black;}
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> - (하이픈) 4단계 초과 사용 지양</th>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">.header-nav-list</span> {color : black;}
+                                    </code>
+                                </td>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">.header_nav-list-item-active-detail</span> {color : black;} 
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th> 다중 클래스 최대 4개이상 사용 지양</th>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">&lt;button class="btn btn-pri ico-rt"&gt;&lt;button/&gt;</span>
+                                    </code>
+                                </td>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">&lt;button class="btn btn-pri ico-rt color-white click"&gt;&lt;button/&gt;</span>
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    다중 클래스 결합 선택자 사용 시 <br>
+                                    포괄하는 요소의 순서대로 기입
+                                </th>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">h2.title</span> {}
+<span class="token selector">.form-input.search</span> {}
+<span class="token selector">input.form-input.search</span> {} 
+                                    </code>
+                                </td>
+                                <td class="code">
+                                    <code class="language-css">
+// .search가 form-input보다 포괄범위가 낮으나 앞에 위치해 안좋은 예시
+<span class="token selector">.search.form-input</span> {} 
+                                    </code>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    마크업 구조를 유추할 수 있게 네이밍, <br>
+                                    클래스 상세도를 최대한 낮게 유지
+                                </th>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">.page-header</span> {}
+<span class="token selector">.page-header-tlt</span> {}
+<span class="token selector">.page-header-desc</span> {} 
+                                    </code>
+                                </td>
+                                <td class="code">
+                                    <code class="language-css">
+<span class="token selector">#wrap .contents section:nth-child(1)</span> {}
+<span class="token selector">#wrap .contents section:nth-child(1) h2.tlt</span> {}
+<span class="token selector">#wrap .contents section:nth-child(1) p.desc</span> {}
+                                    </code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    CSS 최적화를 위해 가능한 속성값을 축약
+                                </th>
+                                <td class="code">
+                                    <code class="language-css">
+{ <span class="token property">color</span>: #fff; }
+{ <span class="token property">background-position</span>: 0 50%; } // 문자 표현 지양, 숫자 표현 지향
+{ <span class="token property">top</span>: 0; }
+                                    </code>
+                                </td>
+                                <td class="code">
+                                    <code class="language-css">
+{ <span class="token property">color</span>: #ffffff; }
+{ <span class="token property">background-position</span>: left center; } 
+{ <span class="token property">top</span>: 0px; }
+                                    </code>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+                <table class="index-table">
+                    <caption id="policy-mediaquery">미디어쿼리 작성</caption>
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>기본 규칙</th>
+                            <td>
+                                데스크톱 퍼스트 원칙에 근거해 데스크톱 디바이스부터 우선적으로 작성합니다.
+                                분기점을 <code>max-width</code> 로 추가하며, 내림차 순으로 정렬합니다.
+                                예외적으로 데스크톱은 <code>min-width</code> 로 최상단에서 제어합니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>예시</th>
+                            <td class="code">
+                                <!-- code : white-space : pre; 적용 중이므로 정렬 금지 -->
+                                <code class="language-css">
+<span class="token comment">// Small Desktop ~ Desktop</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">only</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 1441px<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+    <span class="token selector">.test</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>black<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Tablet ~ Small Desktop</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">only</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 1440px<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+    <span class="token selector">.test</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>black<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Mobile ~ Tablet</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">only</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 1024px<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+    <span class="token selector">.test</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>black<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ~ Mobile</span>
+<span class="token atrule"><span class="token rule">@media</span> <span class="token keyword">only</span> screen <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+    <span class="token selector">.test</span> <span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>black<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+                                </code>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./resources/js/index_guide.js"></script>
+    <script>
+        $('.index-table').each(function(index,item){
+            const id = $(item).find('caption').attr('id');
+            $(item).addClass(id)
+        })
+        function printPage(){
+            var initBody;
+            window.onbeforeprint = function(){
+                initBody = document.body.innerHTML;
+                document.body.innerHTML = document.getElementById('container').innerHTML;
+            }
+            window.onafterprint = function(){
+                document.body.innerHTML = initBody;
+            }
+            window.print();
+        }
+    </script>
+</body>
+
+</html>

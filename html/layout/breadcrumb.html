@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    .breadcrumb-path {
+        display: flex;
+        max-width: 1280px;
+    }
+    .breadcrumb-path .breadcrumb-txt {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        text-decoration: underline;
+        text-underline-position: under;
+    }
+    .breadcrumb-path .breadcrumb-txt::before,
+    .breadcrumb-path .breadcrumb-txt::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .breadcrumb-path > li:not(:last-child) .breadcrumb-txt::after {
+        width: 16px;
+        height: 16px;
+        background-image: url(../../resources/images/ico/ico_arrow_right.svg);
+    }
+
+    .breadcrumb-path .home .breadcrumb-txt::before {
+        width: 16px;
+        height: 16px;
+        background-image: url(../../resources/images/ico/ico_bread_home.svg);
+    }
+</style>
+<style>
+    .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background-color: cadetblue;
+        color: white;
+        height: 40px;
+        border-radius: 8px;
+    }
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title">
+                <span class="cate"></span>
+                Breadcrumb Guide
+            </h2>
+            <div class="dec">
+                <p>브레드크럼은 탐색 계층 구조를 표시해 사용자가 현재 위치를 파악할 수 있게 해주는 ui입니다.</p>
+                <p>단계 계층이 명확하고, 의미있는 순서이기 때문에 ol 태그를 사용해야합니다.</p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <nav id="breadcrumb" class="breadcrumb" aria-label="현재 경로">
+                <ol class="breadcrumb-path">
+                    <li class="home">
+                        <a href="#" class="breadcrumb-txt">홈</a>
+                    </li>
+                    <li>
+                        <a href="#" class="breadcrumb-txt">인증서 검증</a>
+                    </li>
+                    <li>
+                        <a href="#" class="breadcrumb-txt">한국어</a>
+                    </li>
+                </ol>
+            </nav>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+    <script>
+    </script>
+</body>
+</html>

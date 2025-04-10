@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+
+    <style>
+        /* Basic */
+        .pagination {
+            display: flex;
+            gap: 8px;
+        }
+        .pagination li a {
+            /* 중앙정렬 */
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center; 
+            flex-direction: row; 
+            width: 40px; height: 40px;
+            border-radius: 8px;
+        }
+        .pagination li a:hover {
+            background-color: #fff6df;
+        }
+        .pagination li a:focus {
+            background-color: #fffbf0;
+        }
+        .pagination li a.is-active,
+        .pagination li a:active {
+            background-color: #ffe5a0;
+        }
+        .pagination li a.is-disabled,
+        .pagination li a.is-disabled:hover,
+        .pagination li a.is-disabled:focus,
+        .pagination li a.is-disabled:active {
+            color: #aaa;
+            background-color: #fff;
+            cursor: default;
+        }
+        .ico-arrow-double-lt {
+            background-image: url(./../../resources/images/ico/ico_arrow_double_left.svg);
+        }
+        .ico-arrow-lt {
+            background-image: url(./../../resources/images/ico/ico_arrow_left.svg);
+        }
+        .ico-arrow-double-rt {
+            background-image: url(./../../resources/images/ico/ico_arrow_double_right.svg);
+        }
+        .ico-arrow-rt {
+            background-image: url(./../../resources/images/ico/ico_arrow_right.svg);
+        }
+    </style>
+
+    <style>
+        i.ico {
+            content: "";
+            display: inline-block;
+            width: 100%; height: 100%;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: cover;
+            vertical-align: middle;
+        }
+
+        /* icon size */
+        i.ico-xs { width: 12px; height: 12px; }
+        i.ico-s  { width: 16px; height: 16px; }
+        i.ico-m  { width: 20px; height: 20px; }
+        i.ico-l  { width: 24px; height: 24px; }
+        i.ico-xl { width: 32px; height: 32px; }
+
+    </style>
+</head>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header" class="layout">
+            <h2 class="title"><span class="cate">layout</span>Pagination Guide</h2>
+            <div class="dec">
+                <p><code>처음 - 이전 - 페이지 넘버 - 다음 - 마지막</code>를 기준으로 퍼블리싱 한다.</p>
+                <p>페이지 이동하는 버튼에 아이콘만 적용 시 <code>aria-label="이전 페이지"</code>와 같이 명칭도 적용한다.</p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <div class="tlt">
+                    <b>- Basic</b>
+                </div>
+                <!-- Basic -->
+                <div>
+                    <ul class="pagination">
+                        <li class="first"><a href="#" class="is-disabled" aria-label="맨 앞"><i class="ico ico-m ico-arrow-double-lt"></i></a></li>
+                        <li class="first"><a href="#" aria-label="이전"><i class="ico ico-m ico-arrow-lt"></i></a></li>
+                        <li class="num"><a href="#">1</a></li>
+                        <li class="num"><a href="#">2</a></li>
+                        <li class="num"><a href="#" class="is-active">3</a></li>
+                        <li class="num"><a href="#">4</a></li>
+                        <li class="num"><a href="#">5</a></li>
+                        <li class="num"><a href="#">6</a></li>
+                        <li class="num"><a href="#">7</a></li>
+                        <li class="num"><a href="#">8</a></li>
+                        <li class="num"><a href="#">9</a></li>
+                        <li class="num"><a href="#" class="is-disabled">10</a></li>
+                        <li class="next"><a href="#" aria-label="다음"><i class="ico ico-m ico-arrow-rt"></i></a></li>
+                        <li class="last"><a href="#" aria-label="맨 뒤"><i class="ico ico-m ico-arrow-double-rt"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <div class="tlt">
+                    <b>- Not first, last</b>
+                </div>
+                <!-- Not first, last -->
+                <div>
+                    <ul class="pagination">
+                        <li class="first"><a href="#" aria-label="이전"><i class="ico ico-m ico-arrow-lt"></i></a></li>
+                        <li class="num"><a href="#">1</a></li>
+                        <li class="num"><a href="#">2</a></li>
+                        <li class="num"><a href="#" class="is-active">3</a></li>
+                        <li class="num"><a href="#">4</a></li>
+                        <li class="num"><a href="#">5</a></li>
+                        <li class="num"><a href="#">6</a></li>
+                        <li class="num"><a href="#">7</a></li>
+                        <li class="num"><a href="#">8</a></li>
+                        <li class="num"><a href="#">9</a></li>
+                        <li class="num"><a href="#" class="is-disabled">10</a></li>
+                        <li class="next"><a href="#" aria-label="다음"><i class="ico ico-m ico-arrow-rt"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB Project Guide - Base</title>
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="./resources/images/img/favicon.ico">
+
+    <link rel="stylesheet" href="./resources/css/reset.css">
+    <link rel="stylesheet" href="./resources/css/guide.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body id="index-guide">
+    <div id="wrap">
+        <header>
+            <div class="tlt-conts">
+                <div>
+                    <h2 class="tlt">ITPUB Project Guide - Base</h2>
+                    <div class="tlt-desc">
+                        <p>프로젝트 컨셉에 맞는 요소들의 기본 스타일을 정의합니다. 레이아웃이나 그리드 같은 추상적 개념도 포함합니다.</p> 
+                    </div>
+                </div>
+                <div class="total-num base">
+                    총<span id="total"></span>건
+                </div>
+            </div>
+            <div class="search-wrap">
+                <form class="search-form">
+                        <input type="text" id="search" placeholder="검색어를 입력해주세요.">
+                        <button class="search-btn" id="search-confirm" disabled="">검색</button>
+                        <button class="btn-function is-active" id="slowModeBtn">검색모드</button>
+                        <button class="btn-function" id="fastModeBtn">필터모드</button>
+                </form>
+            </div>
+        </header>
+        <div id="container">
+            <aside class="sidebar">
+                <nav>
+                    <h2 class="sr-only">카테고리</h2>
+                    <ul class="sidebar-list">
+                        <li class="sidebar-item index">
+                            <a href="./index.html">Guide</a>
+                        </li>
+                        <li class="sidebar-item is-active base">
+                            <a href="./index_base.html">Base</a>
+                        </li>
+                        <li class="sidebar-item layout">
+                            <a href="./index_layout.html">Layout</a>
+                        </li>
+                        <li class="sidebar-item component">
+                            <a href="./index_component.html">Component</a>
+                        </li>
+                        <li class="sidebar-item dict">
+                            <a href="./index_dict.html">Dictionary</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="table-wrap">
+                <table class="file_lst">
+                    <colgroup>
+                        <col style="width: 20%;" />
+                        <col style="width: 20%;" />
+                        <col style="width: auto;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>컴포넌트명</th>
+                            <th>Link</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>아이콘</td>
+                            <td><a href="./html/base/icon.html" target="_blank">링크</a></td>
+                            <td>기본 아이콘 스타일 정의</td>
+                        </tr>
+                        <tr>
+                            <td>버튼</td>
+                            <td><a href="./html/base/button.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>테이블</td>
+                            <td><a href="./html/base/table.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>이미지</td>
+                            <td><a href="./html/base/img.html" target="_blank">링크</a></td>
+                            <td>이미지 마크업 및 대체 텍스트 가이드</td>
+                        </tr>
+                        <tr>
+                            <td>이미지 > picture 태그</td>
+                            <td><a href="./html/base/picture.html" target="_blank">링크</a></td>
+                            <td>html 반응형 이미지 컨테이너 가이드</td>
+                        </tr>
+
+                        <tr>
+                            <td>폼 > 체크박스, 라디오</td>
+                            <td><a href="./html/base/check_radio.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>폼 > 인풋, 셀렉트, 텍스트에리어</td>
+                            <td><a href="./html/base/input_select_textarea.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>정보 텍스트</td>
+                            <td><a href="./html/base/infomation.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>컨테이너</td>
+                            <td><a href="./html/base/container.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>정보 텍스트 - 불릿</td>
+                            <td><a href="./html/base/infomation_bullet.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>정보 텍스트 - 넘버</td>
+                            <td><a href="./html/base/infomation_counter.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./resources/js/index_guide.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    img, figure {
+        max-width: 100%;
+        vertical-align: top;
+    }
+    .bullet {
+        display: flex;
+        align-items: center;
+    }
+
+    .bullet::before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background-color: black;
+        border-radius: 50%;
+        margin-right: 4px;
+    }
+
+</style>
+<style>
+    .img-wrap {
+        width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .barcode {
+        max-width: 200px;
+    }
+    .tlt:not(:first-child) {
+        padding-top: 32px;
+        border-top: 1px solid #eee;
+    }
+    .border-box {
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #d8d8d8;
+    }
+    .border-box p {
+        padding: 8px 0;
+    }
+
+    .border-box p:nth-child(2){
+        border-top: 1px solid #d8d8d8;
+    }
+
+    .tlt code {
+        margin-top: 8px;
+        margin-left: 8px;
+    }
+
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title"><span class="cate"></span>Img Guide</h2>
+            <div class="dec">
+                <p>이미지를 마크업하는 방법은 <code>img</code>태그를 사용해 전경 처리 하는 법과</p>
+                <p><code>background-image</code>를 사용해 후경으로 처리하는 방법이 있습니다.</p>
+                <p>이 둘을 처리하는 방법에는 정보의 목적에 따라 구분됩니다.</p>
+                <p>
+                    <code>img</code>로 마크업하는 경우, 의미가 있는 이미지일 경우 <code>alt(대체텍스트)</code>를 필수적으로 기입하고 
+                    부득이하게 꾸밈요소로써 사용할 경우 해당 값을 비워놔야 합니다.
+                </p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <div class="tlt">
+                    <b>- Img 태그</b>
+                    <p>일반 이미지 태그</p>
+                    <p>예시)<code>alt="기니피그 두 마리가 앉아있는 모습"</code></p>
+                    <p>* 대부분의 스크린 리더에서 "이미지" 단어는 자동으로 추가되므로 굳이 기입하지 않아도 됩니다.</p>
+                </div>
+                <div class="img-wrap">
+                    <img src="../../resources/images/img/img_ginipig.jpg" alt="기니피그 이미지1">
+                </div>
+                <div class="tlt">
+                    <b>- Img 태그 > QR코드, 바코드</b>
+                    <p>QR 코드나 바코드같은 이미지 정보는 대체 텍스트로 연결 링크를 제공해야합니다.</p>
+                    <p>예시)<code>alt="www.url.com 바로가기"</code></p>
+                </div>
+                <div class="img-wrap barcode">
+                    <img src="../../resources/images/img/img_qr.jpg" alt="www.url.com 바로가기">
+                </div>
+                <div class="tlt">
+                    <b>- Background 처리</b>
+                    <p>의미없는 꾸밈 요소, 아이콘 등</p>
+                    <p>예외적으로 개발 생산성, 유지보수를 위해 아이콘 시스템은 background-image로 처리합니다.</p>
+                </div>
+                <div class="border-box">
+                    <p class="bullet">
+                        리스트에 포함된 불릿아이콘
+                    </p>
+                    <p>
+                        <i class="ico ico-m ico-login"></i>
+                        아이콘 시스템
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    /* Bullet */
+    p.bullet::before {
+        content: '';
+        display: inline-block;
+        width: 4px; height: 4px; 
+        background-color: black;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin: 0 8px;
+    }
+    /* Bullet List */
+    ul.bullet-list > li::before {
+        content: '';
+        display: inline-block;
+        width: 4px; height: 4px; 
+        background-color: black;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin: 0 8px;
+    }
+    ul.bullet-list > li + li {
+        margin-top: 4px;
+    }
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title"><span class="cate"></span>Infomation Bullet Guide</h2>
+            <div class="dec">
+                <p>bullet은 주로 주석글 및 설명글에 사용됩니다. 앞에 꾸밈요소는 before로 들어갑니다.</p>
+                <p>
+                    한 줄만 필요할 경우에는 <code>p</code>태그에 클래스<code>bullet</code>, 
+                    여러 줄이 필요할 경우 <code>ul</code>태그에 클래스<code>bullet-list</code>를 사용합니다.
+                </p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <div class="tlt">
+                    <b>- Bullet</b>
+                </div>
+                <!-- Bullet -->
+                <p class="bullet">설명글의 내용입니다.</p>
+            </div>
+            <div>
+                <div class="tlt">
+                    <b>- Bullet List</b>
+                </div>
+                <!-- Bullet List -->
+                <ul class="bullet-list">
+                    <li>설명글[0] 내용입니다.</li>
+                    <li>설명글[1] 내용입니다.</li>
+                    <li>설명글[2] 내용입니다.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

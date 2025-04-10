@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+
+    <style>
+        /* icon initialize */
+        i.ico {
+            content: "";
+            display: inline-block;
+            width: 100%; height: 100%;
+            background-repeat: no-repeat;
+            background-position: 0 50%;
+            background-size: cover;
+            vertical-align: middle;
+        }
+
+        /* icon size */
+        i.ico-xs { width: 12px; height: 12px; }
+        i.ico-s  { width: 16px; height: 16px; }
+        i.ico-m  { width: 20px; height: 20px; }
+        i.ico-l  { width: 24px; height: 24px; }
+        i.ico-xl { width: 32px; height: 32px; }
+
+        /* icon type */
+        i.ico-robot {
+            background-image: url(./../../resources/images/ico/ico_robot.svg);
+        }
+        i.ico-warning {
+            background-image: url(./../../resources/images/ico/ico_warning.svg);
+        }
+    </style>
+</head>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header" class="base">
+            <h2 class="title"><span class="cate">base</span>Icon Guide</h2>
+            <div class="dec">
+                <p>파일명은 <code>ico_name</code>로 작성하며, 확장자는 <code>.svg</code>로 저장한다.<br>사이즈의 경우 xs(12), s(16), m(20), l(24), xl(32)로 분류한다.</p>
+                <p><code><span><</span>i></code>를 사용하여 작성한다.</p>
+                <p><b>예시) 제일 큰 로봇 아이콘 <code>class="ico ico-xl ico-robot"</code></b></p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <div class="tlt">
+                    <b>- Basic</b>
+                </div>
+                <!-- Basic -->
+                <div>
+                    <i class="ico ico-xs ico-robot"></i>
+                    <i class="ico ico-s ico-robot"></i>
+                    <i class="ico ico-m ico-robot"></i>
+                    <i class="ico ico-l ico-robot"></i>
+                    <i class="ico ico-xl ico-robot"></i>
+                </div>
+            </div>
+            <div>
+                <div class="tlt">
+                    <b>- Info Text</b>
+                </div>
+                <div class="col">
+                <!-- Basic -->
+                    <div>
+                        <p><i class="ico ico-xs ico-warning"></i>9-16자 영문, 숫자 특수문자를 조합해주세요.</p>
+                        <p><i class="ico ico-s ico-warning"></i>9-16자 영문, 숫자 특수문자를 조합해주세요.</p>
+                        <p><i class="ico ico-m ico-warning"></i>9-16자 영문, 숫자 특수문자를 조합해주세요.</p>
+                        <p><i class="ico ico-l ico-warning"></i>9-16자 영문, 숫자 특수문자를 조합해주세요.</p>
+                        <p><i class="ico ico-xl ico-warning"></i>9-16자 영문, 숫자 특수문자를 조합해주세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

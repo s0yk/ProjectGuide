@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB Project Guide - Component</title>
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="./resources/images/img/favicon.ico">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="./resources/css/reset.css">
+    <link rel="stylesheet" href="./resources/css/guide.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body id="index-guide">
+    <div id="wrap">
+        <header>
+            <div class="tlt-conts">
+                <div>
+                    <h2 class="tlt">ITPUB Project Guide - Component</h2>
+                    <div class="tlt-desc">
+                        <p>여러개의 Base가 결합되어 영역을 구성하는 형태입니다.</p> 
+                        <p>재사용이 가능한 화면의 구성요소로써 컴포넌트들의 조합으로 화면을 구성할 수 있습니다.</p> 
+                    </div>
+                </div>
+                <div class="total-num component">
+                    총<span id="total"></span>건
+                </div>
+            </div>
+            <div class="search-wrap">
+                <form class="search-form">
+                        <input type="text" id="search" placeholder="검색어를 입력해주세요.">
+                        <button class="search-btn" id="search-confirm" disabled="">검색</button>
+                        <button class="btn-function is-active" id="slowModeBtn">검색모드</button>
+                        <button class="btn-function" id="fastModeBtn">필터모드</button>
+                </form>
+            </div>
+        </header>
+        <div id="container">
+            <aside class="sidebar">
+                <nav>
+                    <h2 class="sr-only">카테고리</h2>
+                    <ul class="sidebar-list">
+                        <li class="sidebar-item index">
+                            <a href="./index.html">Guide</a>
+                        </li>
+                        <li class="sidebar-item base">
+                            <a href="./index_base.html">Base</a>
+                        </li>
+                        <li class="sidebar-item layout">
+                            <a href="./index_layout.html">Layout</a>
+                        </li>
+                        <li class="sidebar-item is-active component">
+                            <a href="./index_component.html">Component</a>
+                        </li>
+                        <li class="sidebar-item dict">
+                            <a href="./index_dict.html">Dictionary</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="table-wrap">
+                <table class="file_lst">
+                    <colgroup>
+                        <col style="width: 20%;" />
+                        <col style="width: 20%;" />
+                        <col style="width: auto;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>컴포넌트명</th>
+                            <th>Link</th>
+                            <th>비고</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>단계표시기</td>
+                            <td><a href="./html/component/step_indicator.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>탑 배너</td>
+                            <td><a href="./html/component/top_banner.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>탭</td>
+                            <td><a href="./html/component/tab.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>툴팁 호버</td>
+                            <td><a href="./html/component/tooltip.html" target="_blank">링크</a></td>
+                            <td>마우스 오버 시 팁이 나오는 UI</td>
+                        </tr>
+                        <tr>
+                            <td>아코디언</td>
+                            <td><a href="./html/component/accordian.html" target="_blank">링크</a></td>
+                            <td>jquery를 이용한 UI</td>
+                        </tr>
+                        <tr>
+                            <td>로그인</td>
+                            <td><a href="./html/component/login.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>팝업</td>
+                            <td><a href="./html/component/popup.html" target="_blank">링크</a></td>
+                            <td>팝업 : 브라우저 내에서 새 창으로 노출되는 UI</td>
+                        </tr>
+                        <tr>
+                            <td>모달</td>
+                            <td><a href="./html/component/modal.html" target="_blank">링크</a></td>
+                            <td>모달 : 브라우저 내에 부모창에 종속되어 노출되는 UI</td>
+                        </tr>
+                        <tr>
+                            <td>달력</td>
+                            <td><a href="./html/component/full_calendar.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>새 창 팝업</td>
+                            <td><a href="./html/component/target_blank.html" target="_blank">링크</a></td>
+                            <td>웹 접근성 준수</td>
+                        </tr>
+                        <tr>
+                            <td>데이트피커</td>
+                            <td><a href="./html/component/datepicker_jquery.html" target="_blank">링크</a></td>
+                            <td>jquery를 이용한 UI</td>
+                        </tr>
+                        <tr>
+                            <td>드롭다운</td>
+                            <td><a href="./html/component/dropdown.html" target="_blank">링크</a></td>
+                            <td>리스트 형태의 드롭다운</td>
+                        </tr>
+                        <tr>
+                            <td>셀렉트 - 커스텀</td>
+                            <td><a href="./html/component/nice_select.html" target="_blank">링크</a></td>
+                            <td>옵션 형태의 드롭다운, 플러그인 Nice Select 이용</td>
+                        </tr>
+                        <tr>
+                            <td>파일첨부</td>
+                            <td><a href="./html/component/attach_file.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>테이블 - 반응형</td>
+                            <td><a href="./html/component/table-responsive.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>스와이퍼</td>
+                            <td><a href="./html/component/default_swiper.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>스와이퍼 - 엣지컷</td>
+                            <td><a href="./html/component/swiper_edge_cut.html" target="_blank">링크</a></td>
+                            <td>가장자리(오른쪽)가 잘리는 형태 구현</td>
+                        </tr>
+                        <tr>
+                            <td>스와이퍼 - 블러, 크기변형</td>
+                            <td><a href="./html/component/swiper_blur_scale.html" target="_blank">링크</a></td>
+                            <td>커버플로우 형태의 UI <a href="https://www.keess.co.kr/" target="_blank">참고</a></td>
+                        </tr>
+                        <tr>
+                            <td>스와이퍼 - 반응형</td>
+                            <td><a href="./html/component/swiper_responsive_play.html" target="_blank">링크</a></td>
+                            <td>PC에서만 활성화</td>
+                        </tr>
+                        <tr>
+                            <td>isotope - 갤러리형 이미지 정렬</td>
+                            <td><a href="./html/component/isotope.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>전체 체크 기능</td>
+                            <td><a href="./html/component/all_check.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./resources/js/index_guide.js"></script>
+</body>
+
+</html>

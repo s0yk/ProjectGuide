@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    :root {
+        --modal-zIndex : 1000;
+        --modal-content-zIndex: 1001;
+    }
+
+    /* Modal */
+    .modal {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        opacity: 0;
+        z-index: var(--modal-zIndex);
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease-in-out;
+    }
+    .modal.is-show {
+        visibility: visible;
+        opacity: 1;
+    }
+    /* modal Size */
+    .modal.modal-s .modal-content {
+        max-width: 640px;
+    }
+    .modal.modal-m .modal-content {
+        max-width: 840px;
+    }
+    .modal.modal-l .modal-content {
+        max-width: 1200px;
+    }
+    .modal-content {
+        width: 100%;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 12px;
+        background-color: #fff;
+        z-index: var(--modal-content-zIndex);
+    }
+    .modal-in {
+        padding: 40px;
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+    }
+    .modal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .modal-head-tlt {
+        font-size: 26px;
+    }
+    .modal-body-in {
+        padding: 20px 0;
+    }
+    .btn-area {
+        margin-top: 40px;
+        text-align: center;
+    }
+    /* Scroll */
+    .scroll-no {
+        overflow: hidden;
+    }
+</style>
+<style>
+    .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background-color: cadetblue;
+        color: white;
+        height: 40px;
+        border-radius: 8px;
+    }
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title">
+                <span class="cate"></span>
+                Modal Guide 
+            </h2>
+            <div class="dec">
+                <p>모달은 브라우저 위에 종속되어 노출되는 UI입니다.</p>
+                <p>필수적으로 불러올 팝업 전용 HTML을 필요로 합니다.</p>
+                <p>자동으로 띄우는 팝업 구현 시 사용자가 팝업을 차단했다면 노출되지 않습니다.</p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <button type="button" class="btn modal-open-trigger" data-target="modal_sample_01">
+                    Modal Trigger : data-target
+                </button>
+                <div class="modal modal-m" role="dialog" id="modal_sample_01">
+                    <div class="modal-content">
+                        <div class="modal-in">
+                            <div class="modal-head">
+                                <h2 class="modal-head-tlt">모달 제목입니다.</h2>
+                                <button type="button" class="modal-close-trigger">
+                                    <i class="ico ico-m ico-close"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modal-body-in">
+                                    <p>
+                                        모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다.
+                                        교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다. 재판의 전심절차로서 
+                                        행정심판을 할 수 있다. 행정심판의 절차는 법률로 정하되, 사법절차가 준용되어야 한다. 국무총리는 대통령을 보좌하며, 행정에 관하여 대통령의 명을 받아 행정각부를 통할한다.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="modal-foot">
+                                <div class="btn-area">
+                                    <button type="button" class="btn modal-close-trigger">확인완료</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+            <div class="script-code-box language-javascript">
+                <div class="title-wrap">
+                    <h3 class="title">Java Script</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-js inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+    <script>
+        const modal = {
+            modalOpenTriggers: null,
+            modalCloseTriggers: null,
+            outsideClickHandlers: {},
+
+            init(){    
+                this.modalOpenTriggers = document.querySelectorAll('.modal-open-trigger');
+                this.modalCloseTriggers = document.querySelectorAll('.modal-close-trigger');
+
+                if(!this.modalOpenTriggers.length || !this.modalCloseTriggers.length) return;
+
+                this.setupTriggers(); // 트리거 이벤트 세팅
+                this.outsideClickModal(); // 모달 제외 트리거 이벤트 
+            },
+            setupTriggers(){
+                // 모달 열기 이벤트 설정
+                this.modalOpenTriggers.forEach((trigger)=> {
+                    trigger.setAttribute('tabindex', '0');
+                    
+                    trigger.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        const modalId = trigger.getAttribute('data-target');
+
+                        if (modalId) {
+                            // aria 설정
+                            trigger.classList.add('is-active');
+                            trigger.setAttribute('tabindex', '-1');
+
+                            this.openModal(modalId)
+                        }
+                    })
+                })
+                this.modalCloseTriggers.forEach((trigger)=>{
+                    trigger.addEventListener('click', (event)=> {
+                        event.preventDefault();
+                        const modalId = trigger.closest('.modal').getAttribute('id');
+                        if (modalId) {
+                            this.closeModal(modalId);
+                        }
+                    })
+                })
+            },
+            openModal(id) {
+                const modalElement = document.getElementById(id);
+                const modalContent = modalElement.querySelector('.modal-content');
+
+                modalElement.classList.add('is-show');
+                modalContent.setAttribute('tabindex', '0');
+                document.querySelector('body').classList.add('scroll-no');
+
+                // 열린 모달 포커스
+                const focusables = modalElement.querySelectorAll(`a, button, [tabindex="0"], input, textarea, select`);
+                setTimeout(()=> {
+                    focusables[0].focus();
+                }, 350)
+            },
+            closeModal(id) {
+                const modalElement = document.getElementById(id);
+                const openModal = document.querySelectorAll('.modal.is-show');
+
+                modalElement.classList.remove('is-show');
+                this.returnFocusToTrigger(id);
+            },
+            outsideClickModal(){
+                document.addEventListener('click', (event) => {
+                    setTimeout(function(){
+                        const openedModalContent = document.querySelector('.modal.is-show .modal-content');
+                        if(openedModalContent && !openedModalContent.contains(event.target) && !event.target.classList.contains('modal-open-trigger')){
+                            openedModalContent.parentElement.classList.remove('is-show');
+                            document.querySelector('body').classList.remove('scroll-no');
+                        }
+                    }, 100)
+                })
+            },
+            returnFocusToTrigger(id){
+                const triggerButton = document.querySelector(`modal-open-trigger[data-target="${id}"]`);
+
+                if(triggerButton) {
+                    triggerButton.focus();
+                    triggerButton.setAttribute('tabindex', '0');
+                    triggerButton.classList.remove('is-active');
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            modal.init();
+        });
+
+    </script>
+</body>
+</html>

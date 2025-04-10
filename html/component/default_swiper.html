@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script src="../../resources/js/sub_guide.js"></script>
+
+    <!-- SWIPER PLUGIN -->
+    <link rel="stylesheet" href="../../resources/css/swiper-bundle.min.css">
+    <script src="../../resources/js/swiper-bundle.min.js"></script>
+</head>
+<style>
+    .my-swiper .swiper-slide > a {
+        display: block; 
+        height: 200px; 
+        text-align: center;
+        background: aliceblue;
+        align-content: center;
+    } 
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title">
+                <span class="cate"></span>
+                스와이퍼 기본형_1
+            </h2>
+            <div class="dec">
+                <p>스와이퍼 슬라이드 작업은 필수적으로 전용 css, js의 cdn 연결이 필요합니다.</p>
+                <p>swiper, swiper-wrapper, swiper-slide 클래스를 필수적으로 사용해야합니다.</p>
+                <p>반응형 제작 시 유의할 점으로 모바일 미디어쿼리는 breakpoints 외부에 선언해주어야 합니다.</p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <article>
+                <div class="my-swiper">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">아이템1</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">아이템2</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">아이템3</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">아이템4</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">아이템5</a>
+                            </div>
+                        </div>
+                        <div class="swiper-indicator">
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+            <div class="script-code-box language-javascript">
+                <div class="title-wrap">
+                    <h3 class="title">Java Script</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-js inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+    <script>
+    let  mySwiper = new Swiper('.my-swiper .swiper',{
+        slidesPerView : '3',
+        spaceBetween : 16,
+        pagination : {
+            el : ".my-swiper .swiper-pagination"
+        },
+        navigation : {
+            nextEl : ".my-swiper .swiper-button-next",
+            prevEl : ".my-swiper .swiper-button-prev"
+        }
+    })
+    </script>
+</body>
+</html>

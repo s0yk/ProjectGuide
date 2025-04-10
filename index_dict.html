@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB Project Guide - Dictionary</title>
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="./resources/images/img/favicon.ico">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="./resources/css/reset.css">
+    <link rel="stylesheet" href="./resources/css/guide.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body id="index-guide">
+    <div id="wrap">
+        <header>
+            
+            <div class="tlt-conts">
+                <div>
+                    <h2 class="tlt">ITPUB Project Guide - Dictionary</h2>
+                    <div class="tlt-desc">
+                        <p>Dictionary는    ㅇㅇ클래스 및 속성 값 규격화를 정의합니다.</p>
+                    </div>
+                </div>
+                <div class="total-num dict">
+                    총<span id="total"></span>건
+                </div>
+            </div>
+            <div class="search-wrap">
+                <form class="search-form">
+                        <input type="text" id="search" placeholder="검색어를 입력해주세요.">
+                        <button class="search-btn" id="search-confirm" disabled="">검색</button>
+                        <button class="btn-function is-active" id="slowModeBtn">검색모드</button>
+                        <button class="btn-function" id="fastModeBtn">필터모드</button>
+                </form>
+            </div>
+        </header>
+        <div id="container">
+            <aside class="sidebar">
+                <nav>
+                    <h2 class="sr-only">카테고리</h2>
+                    <ul class="sidebar-list">
+                        <li class="sidebar-item index">
+                            <a href="./index.html">Guide</a>
+                        </li>
+                        <li class="sidebar-item base">
+                            <a href="./index_base.html">Base</a>
+                        </li>
+                        <li class="sidebar-item layout">
+                            <a href="./index_layout.html">Layout</a>
+                        </li>
+                        <li class="sidebar-item component">
+                            <a href="./index_component.html">Component</a>
+                        </li>
+                        <li class="sidebar-item dict is-active">
+                            <a href="./index_dict.html">Dictionary</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="table-wrap">
+                <table class="file_lst">
+                    <colgroup>
+                        <col style="width: 10%;" />
+                        <col style="width: 10%;" />
+                        <col style="width: 20%;" />
+                        <col style="width: 30%;" />
+                        <col style="width: auto;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분1</th>
+                            <th>구분2</th>
+                            <th>예약어</th>
+                            <th>클래스 명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Display</td>
+                            <td></td>
+                            <td>
+                                <code>
+                                    d-
+                                </code>
+                            </td>
+                            <td>
+                                <code>d-bk: block;</code>
+                                <code>d-inbk: inline-block;</code>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Position</td>
+                            <td></td>
+                            <td>
+                                <code>
+                                    pos-
+                                </code>
+                            </td>
+                            <td>
+                                <code>pos-rel</code>
+                                <code>pos-abs</code>
+                                <code>pos-fix</code>
+                            </td>
+                            <td>pos-rel: position: relative pos-fix: position: fixed</td>
+                        </tr>
+                        <tr>
+                            <td>Width</td>
+                            <td></td>
+                            <td>
+                                <code>w-</code>
+                            </td>
+                            <td>
+                                <code>w-auto</code>
+                                <code>w-50</code> 
+                                <code>w-100</code>
+                            </td>
+                            <td>w-100: width: 100%</td>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td></td>
+                            <td>
+                                <code>h-</code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Margin</td>
+                            <td></td>
+                            <td>
+                                <code>mg-</code>
+                                <code>mt-</code>
+                                <code>mb-</code>
+                                <code>mr-</code>
+                                <code>ml-</code>
+                            </td>
+                            <td>
+                                <code>mt-20: margin-top: 20px</code>
+                                <code>mr-20: margin-right: 20px</code>
+                            </td>
+                            <td></td>
+                        </tr> 
+                        <tr>
+                            <td>Padding</td>
+                            <td></td>
+                            <td>
+                                <code>pd-</code>
+                                <code>pt-</code>
+                                <code>pb-</code>
+                                <code>pr-</code>
+                                <code>pl-</code> 
+                            </td>
+                            <td>
+                                <code>pt-20: padding-top: 20px</code>
+                                <code>pr-20: padding-right: 20px</code>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Background</td>
+                            <td></td>
+                            <td>
+                                <code>bg-</code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Border</td>
+                            <td></td>
+                            <td>
+                                <code>bd-</code>
+                            </td>
+                            <td>
+                                <code>
+                                    bd-blue: border 1px solid blue
+                                </code>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Initalize</td>
+                            <td></td>
+                            <td>
+                                <code>-init</code>
+                            </td>
+                            <td>
+                                <code>bg-init: background: none</code>
+                            </td>
+                            <td>스타일 초기화 관련 클래스</td>
+                        </tr>
+                        <tr>
+                            <td>Text-align</td>
+                            <td></td>
+                            <td>
+                                <code>txt-</code>
+                            </td>
+                            <td>
+                                <code>txt-l</code>
+                                <code>txt-c</code> 
+                                <code>txt-r</code>
+                            </td>
+                            <td>
+                                txt-c : text-align: center
+                                txt-l : text-align: left
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Reverse (반전)</td>
+                            <td></td>
+                            <td>
+                                <code>rev-</code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Scroll</td>
+                            <td></td>
+                            <td>
+                                <code>scroll-</code>
+                            </td>
+                            <td>
+                                <code>scroll-x</code>
+                                <code>scroll-y</code>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Color</td>
+                            <td></td>
+                            <td>
+                                <code>col-</code>
+                            </td>
+                            <td>
+                                <code>col-txt</code>
+                                <code>col-tlt</code>
+                                <code>col-pri</code>
+                                <code>col-sec</code>
+                                <code>col-gray</code>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Description (설명)</td>
+                            <td></td>
+                            <td>
+                                <code>desc-</code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Table</td>
+                            <td></td>
+                            <td>
+                                <code>tbl-</code>
+                            </td>
+                            <td>
+                                <code>tbl-col</code> 
+                                <code>tbl-row</code>
+                            </td>
+                            <td>
+                            tbl-col : 행이 제목인 경우(리스트 형태) / tbl-row : 열이 제목인
+                            경우(입력 형태)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Button</td>
+                            <td></td>
+                            <td>
+                                <code>btn-</code>
+                            </td>
+                            <td>
+                                <code>btn-basic</code>
+                                <code>btn-sm</code>
+                                <code>btn-ico</code>
+                                <code>btn-pri</code>
+                                <code>btn-bk</code>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Form</td>
+                            <td>checkbox</td>
+                            <td>
+                                <code>
+                                    chk-
+                                </code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Form</td>
+                            <td>search</td>
+                            <td>
+                                <code>sch-</code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Img</td>
+                            <td></td>
+                            <td>
+                                <code>img-</code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Icon</td>
+                            <td></td>
+                            <td>
+                                <code>ico-</code>
+                            </td>
+                            <td>
+                                <code>ico-xl</code>
+                                <code>ico-l</code> 
+                                <code>ico-m</code>
+                                <code>ico-s</code>
+                                <code>ico-xs</code>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Container</td>
+                            <td></td>
+                            <td>
+                                <code>
+                                    -inner
+                                </code>
+                            </td>
+                            <td></td>
+                            <td>inner : max-width: 1280px margin 0px auto</td>
+                        </tr>
+                        <tr>
+                            <td>Infomation</td>
+                            <td></td>
+                            <td>
+                                <code>info-</code>
+                            </td>
+                            <td>
+                                <code>info-suc</code>
+                                <code>info-fail</code>
+                                <code>info-bullet</code>
+                            </td>
+                            <td>txt-suc: 조건 부합, txt-fail: 실패</td>
+                        </tr>
+                        <tr>
+                            <td>Attribute (속성)</td>
+                            <td></td>
+                            <td>
+                                <code>attr-</code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Number</td>
+                            <td></td>
+                            <td>
+                                <code>num-</code>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./resources/js/index_guide.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+
+    <style>
+        .is-shadow {
+            box-shadow: 0px 4px 4px 0px #00000026;
+        }
+        .is-dimmed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* layout */
+        .ly-inner {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* GOV Banner*/
+        #wrap {position: relative;}
+        .header-wrap {
+            /* position: fixed; */
+            position: relative;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 1000;
+        }
+        .header-wrap .gov-banner {
+            background-color: #eef2f7;
+        }
+        .header-wrap .gov-banner .ly-inner {
+            display: flex;
+            gap: 6px;
+            padding: 3px 0;
+        }
+        .header-wrap .header-main .ly-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 12px 24px 16px;
+        }
+        /* Util Conts */
+        .header-wrap .header-main .header-util {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            flex-direction: row;
+        }
+        .header-wrap .header-main .header-util li:not(:first-child)::before {
+            display: inline-flex;
+            content: "";
+            width: 1px;
+            height: 16px;
+            background-color: #cdd1d5;
+        }
+        .header-wrap .header-main .header-util li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+        }
+        .header-wrap .header-main .header-util li:not(:first-child) {
+            gap: 12px;
+            margin-left: 12px;
+        }
+        /* Header Conts */
+        .header-wrap .header-main .header-main-conts {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+        }
+        .header-wrap .header-main .header-main-conts .header-main-logo {
+            display: inline-flex;
+            width: 268px;
+            height: 53px;
+        }
+        .header-wrap .header-main .header-main-conts .header-main-logo a {
+            display: block;
+            width: 100%; height: 100%;
+            background: url(../../resources/images/logo/logo_apostille.svg) no-repeat center / contain;
+        }
+        .header-wrap .header-main .header-main-conts .header-main-util {
+            display: inline-flex;
+            gap: 12px;
+            margin-left: auto;
+        }
+        .header-wrap .header-main .header-main-conts .header-main-util li a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 4px;
+            padding: 4px 12px;
+            font-weight: 700;
+        }
+        /* GNB */
+        .gnb {
+            position: relative;
+            border-top: 1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+        }
+        /*  Depth name
+            - 1Depth           :gnb-main-list
+            - 2Depth           :gnb-sub-list
+            - 3Depth           :gnb-detail-list
+            Depth type
+            - gnb-type-base    :3depth 메뉴명
+            - gnb-type-dec     :3depth 메뉴명 + 설명
+            - gnb-type-single  :3depth 없음 
+        */
+        .gnb .gnb-main-list {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .gnb .gnb-main-list .gnb-main-btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            gap: 4px;
+            position: relative;
+            height: 56px;
+            padding: 0 12px;
+            font-size: 18px;
+            font-weight: 700;
+            transition: 0.4s ease-in-out;
+        }
+        .gnb .gnb-main-list li.is-active .gnb-main-btn i {
+            transform: rotate(-180deg);
+        }
+        .gnb .gnb-main-list .gnb-main-btn::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 0.4rem;
+            background-color: #063a74;
+            transition: 0.4s ease-in-out;
+        }
+        .gnb .gnb-main-list li.is-active .gnb-main-btn::before {
+            left: 0;
+            width: 100%;
+        }
+        .gnb .gnb-main-list .gnb-main-btn ul::after {
+            content: "";
+            display: inline-flex;
+            width: 20px; height: 20px;
+            background: url(../images/ico/ico_arrow_down.svg) no-repeat left center / contain;
+        }
+        /* 2Depth */
+        .gnb .gnb-main-list .gnb-sub-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            margin-top: 1px;
+            background-color: #fff;
+        }
+        .gnb .gnb-main-list .gnb-sub-list[data-has-submenu=true] {
+            height: 100%;
+        }
+        .gnb .gnb-main-list .gnb-sub-list[data-has-submenu=true] .gnb-sub-inner-list::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 266px;
+            min-height: 100%;
+            background-color: #eef2f7;
+            /* z-index: -1; */
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list {
+            position: relative;
+            max-width: 1280px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 16px 0;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul {
+            position: relative;
+            padding: 16px 0;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li {
+            width: 266px;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-sub-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+            gap: 24px;
+            padding: 16px;
+            background-color: transparent;
+            font-size: 18px;
+            text-align: left;
+            transition: 0.4s ease-in-out;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-sub-btn:hover,
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li.is-active .gnb-sub-btn {
+            font-weight: 700;
+            background-color: #fff;
+            color: #052b57;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list {
+            display: flex;
+            flex-direction: column;
+            align-items: normal;
+            gap: 16px;
+            position: absolute;
+            top: 0;
+            left: 266px;
+            right: 0;
+            min-height: 100%;
+            padding: 16px 120px 16px 40px;
+            display: none;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list .gnb-sub-tit,
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list .gnb-sub-tit {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            gap: 16px;
+            height: 56px;
+            padding: 0 4px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list .gnb-type-single {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 40px;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list .gnb-type-base {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 40px;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list .gnb-type-single li a,
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list .gnb-type-base li a {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: row;
+            width: 100%;
+            gap: 8px;
+            padding: 10px 8px;
+            background-color: transparent;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list .gnb-type-single li a::before,
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list .gnb-type-base li a::before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            margin-top: 10px;
+            background-color: #1e2124;
+            border-radius: 100%;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list .gnb-type-dec {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list .gnb-type-dec li {
+            display: flex;
+            align-items: normal;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 4px;
+            padding: 0;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list .gnb-type-dec li .gnb-deatil-tit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            width: auto;
+            padding: 4px;
+            background-color: transparent;
+            font-size: 17px;
+        }
+        .gnb .gnb-main-list .gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-detail-list .gnb-type-dec li .gnb-deatil-dec {
+            padding: 14px 6px 0;
+            border-top: 0.1rem solid #cdd1d5;
+        }
+        .gnb .gnb-main-list li.is-active .gnb-sub-list,
+        .gnb .gnb-main-list li .gnb-sub-inner-list li button.is-active .gnb-detail-list,
+        .gnb .gnb-main-list li.is-active .gnb-sub-inner-list li.is-active .gnb-detail-list {
+            display: block;
+            visibility: visible;
+            overflow: visible;
+        }
+    </style>
+    <style>
+        #wrap header {width: 100%;}
+        .header-wrap {position: initial;}
+    </style>
+</head>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header" class="layout">
+            <h2 class="title"><span class="cate">layout</span>Header - Basic Guide</h2>
+            <div class="dec">
+                <p>KRDS 컴포넌트 가이드를 기준으로 작성(<a href="https://www.krds.go.kr/html/pattern/sample_sub_01.html">KRDS</a>)</p>
+                <!-- <p><b>각 구역 설명(HTML 주석참고)</b><br>
+                    - <code>GOV Banner</code> 정부기관 안내 영역<br>
+                    - <code>Util Conts</code> 유틸 영역<br>
+                    - <code>Header Conts</code> 주 헤더 영역<br>
+                    - <code>GNB</code> 메뉴 영역<br>
+                </p> -->
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div id="wrap">
+                <!-- Basic -->
+                <header class="header-wrap">
+                    <!-- GOV Banner -->
+                    <div class="gov-banner">
+                        <div class="ly-inner">
+                            <i class="ico ico-l ico-nat-flag"></i>이 누리집은 대한민국 공식 전자정부 누리집입니다.
+                        </div>
+                    </div>
+
+                    <div class="header-main">
+                        <div class="ly-inner">
+                            <!-- Util Conts -->
+                            <ul class="header-util">
+                                <li><a href="#">통합예약<i class="ico ico-s ico-site"></i></a></li>
+                                <li><a href="#">메뉴 B</a></li>
+                                <li><a href="#">메뉴 C<i class="ico ico-s ico-down"></i></a></li>
+                            </ul>
+
+                            <!-- Header Conts -->
+                            <div class="header-main-conts">
+                                <h1 class="header-main-logo">
+                                    <a href="#">
+                                        <span class="sr-only">대한민국 아포스티유</span>
+                                    </a>
+                                </h1>
+                                <ul class="header-main-util">
+                                    <li><a href="#"><i class="ico ico-l ico-search"></i>통합검색</a></li>
+                                    <li><a href="#"><i class="ico ico-l ico-login"></i>로그인</a></li>
+                                    <li><a href="#"><i class="ico ico-l ico-join"></i>회원가입</a></li>
+                                    <li><a href="#"><i class="ico ico-l ico-mypage"></i>마이페이지</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GNB -->
+                    <nav class="gnb">
+                        <div class="ly-inner">
+                            <ul class="gnb-main-list" role="tablist">
+                                <li>
+                                    <button type="button" class="gnb-main-btn">메뉴 타입 A<i class="ico ico-m ico-arrow-down"></i></button>
+                                    <div class="gnb-sub-list" data-has-submenu="true">
+                                        <div class="gnb-sub-inner-list">
+                                            <ul>
+                                                <li>
+                                                    <button type="button" class="gnb-sub-btn">메뉴 타입 A-1 <i class="ico ico-m ico-arrow-right"></i></button>
+                                                    <div class="gnb-detail-list">
+                                                        <h2 class="gnb-sub-tit">메뉴 타입 A-1</h2>
+                                                        <ul class="gnb-type-dec">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-1-ㄱ</h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-1-ㄴ</h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-1-ㄷ</h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-1-ㄹ <i class="ico ico-m ico-site"></i></h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-1-ㅁ</h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-1-ㅂ</h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="gnb-sub-btn">메뉴 타입 A-2</button>
+                                                    <div class="gnb-detail-list">
+                                                        <h2 class="gnb-sub-tit">메뉴 타입 A-2</h2>
+                                                        <ul class="gnb-type-dec">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-2-ㄱ</h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-2-ㄴ</h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <h3 class="gnb-deatil-tit">메뉴 타입 A-2-ㄷ</h3>
+                                                                    <p class="gnb-deatil-dec">메뉴명과 메뉴에 관한 간략한 설명이 표시되는 스타일입니다.</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button type="button" class="gnb-main-btn">메뉴 타입 B<i class="ico ico-m ico-arrow-down"></i></button>
+                                    <div class="gnb-sub-list" data-has-submenu="true">
+                                        <div class="gnb-sub-inner-list">
+                                            <ul>
+                                                <li>
+                                                    <button type="button" class="gnb-sub-btn">메뉴 타입 B-1 <i class="ico ico-m ico-arrow-right"></i></button>
+                                                    <div class="gnb-detail-list">
+                                                        <h2 class="gnb-sub-tit">메뉴 타입 B-1</h2>
+                                                        <ul class="gnb-type-base">
+                                                            <li><a href="#">메뉴 타입 B-1-ㄱ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-2-ㄴ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-3-ㄷ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-4-ㄹ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-5-ㅁ</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="gnb-sub-btn">메뉴 타입 B-2 <i class="ico ico-m ico-arrow-right"></i></button>
+                                                    <div class="gnb-detail-list">
+                                                        <h2 class="gnb-sub-tit">메뉴 타입 B-2</h2>  
+                                                        <ul class="gnb-type-base">
+                                                            <li><a href="#">메뉴 타입 B-1-ㄱ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-2-ㄴ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-3-ㄷ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-4-ㄹ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-5-ㅁ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-6-ㅂ</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="gnb-sub-btn">메뉴 타입 B-3 <i class="ico ico-m ico-arrow-right"></i></button>
+                                                    <div class="gnb-detail-list">
+                                                        <h2 class="gnb-sub-tit">메뉴 타입 B-3</h2>
+                                                        <ul class="gnb-type-base">
+                                                            <li><a href="#">메뉴 타입 B-3-ㄱ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-3-ㄴ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-3-ㄷ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-3-ㄹ</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <button type="button" class="gnb-sub-btn">메뉴 타입 B-4 <i class="ico ico-m ico-arrow-right"></i></button>
+                                                    <div class="gnb-detail-list">
+                                                        <h2 class="gnb-sub-tit">메뉴 타입 B-4</h2>
+                                                        <ul class="gnb-type-base">
+                                                            <li><a href="#">메뉴 타입 B-4-ㄱ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-4-ㄴ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-4-ㄷ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-4-ㄹ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-5-ㅁ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-6-ㅂ</a></li>
+                                                            <li><a href="#">메뉴 타입 B-7-ㅅ</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <button type="button" class="gnb-main-btn">메뉴 타입 C<i class="ico ico-m ico-arrow-down"></i></button>
+                                    <div class="gnb-sub-list">
+                                        <div class="gnb-sub-inner-list">
+                                            <h2 class="gnb-sub-tit">메뉴 타입 C</h2>
+                                            <ul class="gnb-type-single">
+                                                <li><a href="#">메뉴 링크 C-1</a></li>
+                                                <li><a href="#">메뉴 링크 C-2</a></li>
+                                                <li><a href="#">메뉴 링크 C-3</a></li>
+                                                <li><a href="#">메뉴 링크 C-4</a></li>
+                                                <li><a href="#">메뉴 링크 C-5</a></li>
+                                                <li><a href="#">메뉴 링크 C-6</a></li>
+                                                <li><a href="#">메뉴 링크 C-7</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+
+            </div>
+        </section>
+
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+            <div class="script-code-box language-javascript">
+                <div class="title-wrap">
+                    <h3 class="title">Java Script</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-js inner-code">
+                </code>
+            </div>
+        </section>
+        
+    </div>
+    <script>
+        /*
+            tit: Header nav open
+            dec: 1Depth 선택 시 해당 하위메뉴 열림/닫힘
+        */
+        $(".gnb .gnb-main-list .gnb-main-btn").on("click", function () {
+            let isActive = $(this).parent().hasClass("is-active");
+            if (!isActive) {
+                // setHeaderFixPad();
+                $(".gnb-sub-list .gnb-sub-inner-list > ul > li").removeClass("is-active");
+                $(".gnb-main-list > li").removeClass("is-active");
+                $(this).parent().addClass("is-active");
+                gnbBgOpen(true);
+                gnbDepth2Active();
+            } else {
+                // setHeaderFixPad();
+                $(".gnb-sub-list .gnb-sub-inner-list > ul > li").removeClass("is-active");
+                $(this).parent().removeClass("is-active");
+                gnbBgOpen(false);
+            }
+
+            gnbMenuSizeChange($(this));
+        });
+
+
+        /*
+            tit: 3Depth open
+            dec: 2Depth 선택 시 해당 하위메뉴 보이기
+        */
+        $(".gnb-sub-list .gnb-sub-inner-list > ul > li .gnb-sub-btn").on("click", function () {
+            $(".gnb-sub-list .gnb-sub-inner-list > ul > li").removeClass("is-active");
+            $(this).parent().addClass("is-active");
+            gnbMenuSizeChange($(this));
+        });
+
+
+        /*
+            func.	 gnbDepth2Active
+            dec.	 2Depth 선택 시 active 효과 처리
+        */
+        function gnbDepth2Active() {
+            $(".gnb-sub-list").each(function () {
+                $(this).find(".gnb-sub-inner-list > ul > li").eq(0).addClass("is-active");
+            });
+        }
+
+
+        /*
+            func.	 gnbBgOpen
+            dec.	 gnb open 시 배경 visible 처리
+        */
+        function gnbBgOpen(isOpen) {
+            if (isOpen) {
+                $(".is-dimmed").remove();
+                $("body").append('<div class="is-dimmed gnb-bg"></div>');
+            } else {
+                gnbDepth2Active();
+                $(".is-dimmed").remove();
+            }
+        }
+
+
+        /*
+            func.	 gnbBgOpen
+            dec.	 gnb 배경 클릭 시 gnb 비활성화 및 배경 비활성화
+        */
+        $("body").on("click", ".gnb-bg.is-dimmed", function () {
+            $(this).hide();
+            $(".gnb .gnb-main-list li").removeClass("is-active");
+        });
+
+
+        /*
+            func.	 gnbMenuSizeChange
+            dec.	 gnb 동적 높이 제어
+        */
+        function gnbMenuSizeChange(e) {
+            let meLi = e.closest("li"); // 가장 가까운 li 선택
+            let gnbSubMenu = meLi.children(".gnb-sub-list"); // 해당 li의 서브 메뉴 가져오기
+
+            if (!gnbSubMenu.length) return; // 서브 메뉴가 없으면 종료
+
+            let liSum = 0;
+            let wrap = 0;
+
+            // 서브 메뉴 내부의 모든 `.gnb-sub-btn`이 포함된 'li'의 높이 합산
+            gnbSubMenu.find(".gnb-sub-btn").parent().each(function () {
+                liSum += $(this).outerHeight(true); // margin 포함 높이
+
+                if ($(this).hasClass("is-active")) {
+                    wrap = $(this).find(".gnb-detail-list").outerHeight(true) + 16; // 여백 포함
+                }
+            });
+
+            let max = Math.max(liSum, wrap);
+            
+            console.log("최대 높이: ", max); // 콘솔에서 높이 값 확인
+
+            gnbSubMenu.css("min-height", max + "px"); // 높이 적용
+        }
+    </script>
+</body>
+</html>

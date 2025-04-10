@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+    <!-- Nice Select Js -->
+    <script src="../../resources/js/jquery.nice-select.js"></script>
+</head>
+<style>
+    /* Custom Select */
+    .ui-select {
+        -webkit-tap-highlight-color: transparent;
+        position: relative;
+        min-width: 100px;
+        padding: 0 61px 0 16px;
+        white-space: nowrap;
+        border: 0;
+        background: #fff url(../../resources/images/ico/ico_arrow_down.svg) no-repeat right 16px center;
+        border: 1px solid var(--bd-color);
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -webkit-user-select:  none;
+        -moz-user-select: none;
+        -ms-user-select:  none;
+        user-select:  none;
+        cursor: pointer;
+    }
+    .ui-select .current {
+        display: inline-block; 
+        vertical-align: middle;
+        display: block; line-height: 56px;
+        width: 100%; height: 100%;        
+        z-index: 10;
+    }
+    .ui-select .list {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 150px;
+        max-height: 450px;
+        padding-top: 10px; padding-bottom: 10px;
+        background: #fff;
+        border: 1px solid var(--bd-color);
+        border-radius: 0px;
+        pointer-events: none;
+        left: 0; 
+        bottom: 0;
+        transform-origin: 50% 0;
+        transform: translateY(0);
+        opacity: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .ui-select.open .current { z-index: 15;}
+    .ui-select.open .list {
+        opacity: 1;
+        pointer-events: auto;
+        -webkit-transform: scale(1) translateY(100%);
+        -ms-transform: scale(1) translateY(100%);
+        transform: scale(1) translateY(100%); 
+        z-index: 11;
+    }
+    .ui-select .option {
+        cursor: pointer;
+        font-weight: 400;
+        line-height: 40px;
+        list-style: none;
+        min-height: 40px;
+        outline: none;
+        padding-left: 18px;
+        padding-right: 29px;
+        text-align: left;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s; 
+    }
+    /* Select Option Hover, Focus Event */
+    .ui-select .option:hover {color: #fff;}
+    .ui-select .option:hover,
+    .ui-select .option.focus,
+    .ui-select .option.selected.focus {
+        background-color: cadetblue !important; 
+    }
+    .ui-select .list:hover .option:not(:hover) {
+        background-color: transparent !important; 
+    }
+    /* Select Disabled */
+    .ui-select.disabled {
+        border-color: #ededed;
+        color: #999;
+        pointer-events: none; 
+    }
+    .ui-select.disabled:after {
+        border-color: #cccccc; 
+    }
+    .ui-select .option.disabled {
+        background-color: transparent;
+        color: #999;
+        cursor: default; 
+    }
+    .no-csspointerevents .ui-select .list {
+        display: none;
+    }
+    .no-csspointerevents .ui-select.open .list { 
+        display: block; 
+    }
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title">
+                <span class="cate"></span>
+                Nice Select - Basic
+            </h2>
+            <div class="dec">
+                <p>nice-select는 기본 HTML <code>select</code> 요소를 스타일링하여 더 세련된 드롭다운 메뉴를 만들 수 있도록 도와주는 jQuery 플러그인입니다.</p>
+                <p>가볍고 사용이 간편하며, 사용자 정의 스타일을 적용하기 쉬운 것이 특징입니다.</p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <!-- Custom Select -->
+                <select class="custom-select">
+                    <option value="1">value1</option>
+                    <option value="2">value2</option>
+                    <option value="3">value3</option>
+                    <option value="4">value4</option>
+                </select>
+            </div>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+            <div class="script-code-box language-javascript">
+                <div class="title-wrap">
+                    <h3 class="title">Java Script</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-js inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+    <script>
+        // Custom Select Init
+        $('.custom-select').customSelect();
+    </script>
+</body>
+</html>

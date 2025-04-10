@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB Project Guide - Layout</title>
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="./resources/images/img/favicon.ico">
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="./resources/css/reset.css">
+    <link rel="stylesheet" href="./resources/css/guide.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body id="index-guide">
+    <div id="wrap">
+        <header>
+            <div class="tlt-conts">
+                <div>
+                    <h2 class="tlt">ITPUB Project Guide - Layout</h2>
+                    <div class="tlt-desc">
+                        <p>Layout은 페이지의 일관성을 위해 콘텐츠를 담는 공간을 조직화하는 웹 화면의 기본 틀입니다. </p>
+                        <p>Header, Footer, Gnb, Lnb 등 필수적인 화면 구조 요소들을 포함하며 재사용성이 낮게 유지됩니다.</p>             
+                    </div>
+                </div>
+                <div class="total-num layout">
+                    총<span id="total"></span>건
+                </div>
+            </div>
+            <div class="search-wrap">
+                <form class="search-form">
+                        <input type="text" id="search" placeholder="검색어를 입력해주세요.">
+                        <button class="search-btn" id="search-confirm" disabled="">검색</button>
+                        <button class="btn-function is-active" id="slowModeBtn">검색모드</button>
+                        <button class="btn-function" id="fastModeBtn">필터모드</button>
+                </form>
+            </div>
+        </header>
+        <div id="container">
+            <aside class="sidebar">
+                <nav>
+                    <h2 class="sr-only">카테고리</h2>
+                    <ul class="sidebar-list">
+                        <li class="sidebar-item index">
+                            <a href="./index.html">Guide</a>
+                        </li>
+                        <li class="sidebar-item base">
+                            <a href="./index_base.html">Base</a>
+                        </li>
+                        <li class="sidebar-item is-active layout">
+                            <a href="./index_layout.html">Layout</a>
+                        </li>
+                        <li class="sidebar-item component">
+                            <a href="./index_component.html">Component</a>
+                        </li>
+                        <li class="sidebar-item dict">
+                            <a href="./index_dict.html">Dictionary</a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="table-wrap">
+                <table class="file_lst">
+                    <colgroup>
+                        <col style="width: 20%;" />
+                        <col style="width: 20%;" />
+                        <col style="width: auto;" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>컴포넌트명</th>
+                            <th>Link</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>헤더</td>
+                            <td><a href="./html/layout/header_basic.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>헤더</td>
+                            <td><a href="./html/layout/header_mobile.html" target="_blank">링크</a></td>
+                            <td>모바일 버전</td>
+                        </tr>
+                        <tr>
+                            <td>푸터</td>
+                            <td><a href="./html/layout/footer_basic.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>레이아웃</td>
+                            <td><a href="./html/layout/layout_basic.html" target="_blank">링크</a></td>
+                            <td>통용적으로 사용되는 마크업 및 컨텐츠 구조</td>
+                        </tr>
+                        <tr>
+                            <td>LNB</td>
+                            <td><a href="./html/layout/layout_lnb.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>브레드크럼브</td>
+                            <td><a href="./html/layout/breadcrumb.html" target="_blank">링크</a></td>
+                            <td>KRDS 기준 마크업</td>
+                        </tr>
+                        <tr>
+                            <td>페이지네이션</td>
+                            <td><a href="./html/layout/pagination.html" target="_blank">링크</a></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./resources/js/index_guide.js"></script>
+</body>
+
+</html>

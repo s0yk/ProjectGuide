@@ -1,0 +1,464 @@
+@charset "utf-8";
+
+/* 상세도 낮음 */
+:root {
+	/* 🎨 Primary (주 색상) */
+	--pri-050: #e9f9fa;
+	--pri-100: #bcecef;
+	--pri-200: #9ce3e7;
+	--pri-300: #6fdce3;
+	--pri-400: #52ced5;
+	--pri-500: #27c2cb;
+	--pri-600: #00adb2;
+	--pri-700: #1c8a90;
+	--pri-800: #156b70;
+	--pri-900: #105155;
+
+	/* 🎨 Secondary (보조 색상) */
+	--sec-400: #4c85ba;
+
+	/* ✅ 상태 색상 */
+
+	/* 🎯 Info (정보 - 파랑) */
+	--info-main: #0ca2ff;
+	--info-lighter: #98dcff;
+	--info-light: #32baff;
+	--info-dark: #1284bd;
+	--info-darker: #0e71a3;
+	--info-hover: var(--info-dark);
+	--info-focus: var(--info-darker);
+	--info-disabled: var(--gray-400);
+	--info-readonly: var(--gray-300);
+
+	/* ✅ Success (성공 - 초록) */
+	--suc-main: #56ca00;
+	--suc-lighter: #aae480;
+	--suc-light: #6ad01f;
+	--suc-dark: #4cb200;
+	--suc-darker: #378100;
+	--suc-hover: var(--suc-dark);
+	--suc-focus: var(--suc-darker);
+	--suc-disabled: var(--gray-400);
+	--suc-readonly: var(--gray-300);
+
+	/* ⚠️ Warning (경고 - 노랑) */
+	--warn-main: #ffb800;
+	--warn-lighter: #ffd980;
+	--warn-light: #ffc530;
+	--warn-dark: #e09e00;
+	--warn-darker: #cb9105;
+	--warn-hover: var(--warn-dark);
+	--warn-focus: var(--warn-darker);
+	--warn-disabled: var(--gray-400);
+	--warn-readonly: var(--gray-300);
+
+	/* ❌ Error (오류 - 빨강) */
+	--err-main: #ea292e;
+	--err-lighter: #ffa5a6;
+	--err-light: #f65458;
+	--err-dark: #cc1e23;
+	--err-darker: #a31418;
+	--err-hover: var(--err-dark);
+	--err-focus: var(--err-darker);
+	--err-disabled: var(--gray-400);
+	--err-readonly: var(--gray-300);
+
+	/* 🎨 Grayscale (회색 계열) */
+	--gray-100: #f0f0f0;
+	--gray-200: #dad5d5;
+	--gray-300: #b4aeae;
+	--gray-400: #969494;
+	--gray-500: #797575;
+	--gray-600: #646161;
+	--gray-700: #353333;
+	--gray-800: #292727;
+	--gray-900: #1d1d1d;
+
+	/* ✅ 배경색 (BG) */
+	--bg-light: #f9fafb;
+	--bg-dark: #121212;
+	--bg-pri: var(--pri-200);
+	--bg-sec: var(--sec-400);
+	--bg-info: var(--info-lighter);
+	--bg-success: var(--suc-lighter);
+	--bg-warning: var(--warn-lighter);
+	--bg-error: var(--err-lighter);
+
+	/* ✅ 텍스트 색상 */
+	--txt-light: #fff;
+	--txt-dark: #000;
+	--txt-pri: #171b22;
+	--txt-sec: #4d5358;
+	--txt-acc: #657584;
+	--txt-disabled: #a0acb8;
+	--txt-info: var(--info-darker);
+	--txt-suc: var(--suc-darker);
+	--txt-warn: var(--warn-darker);
+	--txt-err: var(--err-darker);
+
+}
+
+/* 상세도 높음 */
+:root {
+	/* 🎨 Primary (주 색상) */
+	--pri-100: #e3f2fd;
+	--pri-200: #bbdefb;
+	--pri-300: #90caf9;
+	--pri-400: #64b5f6;
+	--pri-500: #2196f3; /* 기본 */
+	--pri-600: #1e88e5;
+	--pri-700: #1976d2;
+	--pri-800: #1565c0;
+	--pri-900: #0d47a1;
+	--pri-hover: var(--pri-600);
+	--pri-focus: var(--pri-700);
+	--pri-disabled: var(--gray-400);
+	--pri-readonly: var(--gray-300);
+	
+
+	/* 🎨 Secondary (보조 색상) */
+	--sec-100: #fce4ec;
+	--sec-200: #f8bbd0;
+	--sec-300: #f48fb1;
+	--sec-400: #f06292;
+	--sec-500: #e91e63; /* 기본 */
+	--sec-600: #d81b60;
+	--sec-700: #c2185b;
+	--sec-800: #ad1457;
+	--sec-900: #880e4f;
+	--sec-100: #fce4ec;
+	--sec-hover: var(--sec-600);
+	--sec-focus: var(--sec-700);
+	--sec-disabled: var(--gray-400);
+	--sec-readonly: var(--gray-300);
+
+	/* 🎨 Accent (강조 색상) */
+	--acc-100: #fff3e0;
+	--acc-200: #ffe0b2;
+	--acc-300: #ffcc80;
+	--acc-400: #ffb74d;
+	--acc-500: #ff9800; /* 기본 */
+	--acc-600: #fb8c00;
+	--acc-700: #f57c00;
+	--acc-800: #ef6c00;
+	--acc-900: #e65100;
+	--acc-hover: var(--acc-600);
+	--acc-focus: var(--acc-700);
+	--acc-disabled: var(--gray-400);
+	--acc-readonly: var(--gray-300);
+
+
+	/* ✅ 상태 색상 */
+
+	/* 🎯 Info (정보 - 파랑) */
+	--info-100: #e3f2fd;
+	--info-200: #bbdefb;
+	--info-300: #90caf9;
+	--info-400: #64b5f6;
+	--info-500: #2196f3; /* 기본 */
+	--info-600: #1e88e5;
+	--info-700: #1976d2;
+	--info-800: #1565c0;
+	--info-900: #0d47a1;
+	--info-hover: var(--info-600);
+	--info-focus: var(--info-700);
+	--info-disabled: var(--gray-400);
+	--info-readonly: var(--gray-300);
+
+	/* ✅ Success (성공 - 초록) */
+	--suc-100: #e8f5e9;
+	--suc-200: #c8e6c9;
+	--suc-300: #a5d6a7;
+	--suc-400: #81c784;
+	--suc-500: #4caf50; /* 기본 */
+	--suc-600: #43a047;
+	--suc-700: #388e3c;
+	--suc-800: #2e7d32;
+	--suc-900: #1b5e20;
+	--suc-hover: var(--suc-600);
+	--suc-focus: var(--suc-700);
+	--suc-disabled: var(--gray-400);
+	--suc-readonly: var(--gray-300);
+
+	/* ⚠️ Warning (경고 - 노랑) */
+	--warn-100: #fffde7;
+	--warn-200: #fff9c4;
+	--warn-300: #fff59d;
+	--warn-400: #fff176;
+	--warn-500: #ffeb3b; /* 기본 */
+	--warn-600: #fdd835;
+	--warn-700: #fbc02d;
+	--warn-800: #f9a825;
+	--warn-900: #f57f17;
+	--warn-hover: var(--warn-600);
+	--warn-focus: var(--warn-700);
+	--warn-disabled: var(--gray-400);
+	--warn-readonly: var(--gray-300);
+
+	/* ❌ Error (오류 - 빨강) */
+	--err-100: #ffebee;
+	--err-200: #ffcdd2;
+	--err-300: #ef9a9a;
+	--err-400: #e57373;
+	--err-500: #f44336; /* 기본 */
+	--err-600: #e53935;
+	--err-700: #d32f2f;
+	--err-800: #c62828;
+	--err-900: #b71c1c;
+	--err-hover: var(--err-600);
+	--err-focus: var(--err-700);
+	--err-disabled: var(--gray-400);
+	--err-readonly: var(--gray-300);
+	
+	/* 🎨 Grayscale (회색 계열) */
+	--gray-100: #f5f5f5;
+	--gray-200: #eeeeee;
+	--gray-300: #e0e0e0;
+	--gray-400: #bdbdbd;
+	--gray-500: #9e9e9e; /* 기본 */
+	--gray-600: #757575;
+	--gray-700: #616161;
+	--gray-800: #424242;
+	--gray-900: #212121;
+	
+	/* ✅ 배경색 (BG) */
+	--bg-light: #f9fafb;
+	--bg-dark: #121212;
+	--bg-pri: var(--pri-500);
+	--bg-sec: var(--sec-500);
+	--bg-acc: var(--acc-500);
+	--bg-info: var(--info-500);
+	--bg-suc: var(--suc-500);
+	--bg-warn: var(--warn-500);
+	--bg-err: var(--err-500);
+
+	/* ✅ 텍스트 색상 */
+	--txt-light: #fff;
+	--txt-dark: #000;
+	--txt-pri: var(--pri-700);
+	--txt-sec: var(--sec-700);
+	--txt-acc: var(--acc-700);
+	--txt-info: var(--info-700);
+	--txt-suc: var(--suc-700);
+	--txt-warn: var(--warn-700);
+	--txt-err: var(--err-700);
+}
+
+/* Display Style */
+.sm-show-800 {
+	display: none !important;
+}
+.lg-only-inline {
+	display: inline-block;
+}
+.hidden {
+	display: none;
+}
+.hidden-i {
+	display: none !important;
+}
+
+.flex {
+	display: flex;
+}
+.flex-ac {
+	display: flex;
+	align-items: center;
+}
+.flex-acjs {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.flex-acjc {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.flex-je {
+	display: flex;
+	justify-content: end;
+}
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.il-flex-ac {
+	display: inline-flex;
+	align-items: center;
+}
+
+.ac-c-i {
+	align-items: center !important;
+}
+.ac-fs-i {
+	align-items: flex-start !important;
+}
+
+.jc-c {
+	justify-content: center;
+}
+
+/* Gap Style */
+.gap-8 {
+	gap: 8px;
+}
+.gap-10 {
+	gap: 10px;
+}
+.gap-12 {
+	gap: 12px;
+}
+.gap-20 {
+	gap: 20px;
+}
+.gap-40 {
+	gap: 40px;
+}
+
+/* Width & Height Style */
+.w-100 {
+	width: 100% !important;
+	max-width: 100% !important;
+}
+.w-auto {
+	width: auto !important;
+}
+.mw-set {
+	max-width: var(--mw-set, 400px);
+} /* fixed value set */
+
+/* Margin Style */
+.mt-20 {
+	margin-top: 20px;
+}
+.mt-40 {
+	margin-top: 40px;
+}
+.mt-80 {
+	margin-top: 80px;
+}
+.mg-0 {
+	margin: 0 !important;
+}
+.mt-0 {
+	margin-top: 0 !important;
+}
+.ml-auto {
+	margin-left: auto;
+}
+
+/* Text & Font Style */
+.txt-c {
+	text-align: center !important;
+}
+.txt-l {
+	text-align: left !important;
+}
+.txt-r {
+	text-align: right !important;
+}
+.txt-bold {
+	font-weight: 700;
+}
+
+/* Position Style */
+.relative {
+	position: relative;
+}
+
+/* Letter Spacing Style */
+.letter-spacing-10 {
+	letter-spacing: -0.1em;
+}
+
+.col-sub-txt {
+	color: var(--sub-txt-color);
+}
+.col-black {
+	color: var(--pri-txt-color);
+}
+.col-pri {
+	color: var(--pri);
+}
+.col-blue {
+	color: var(--blue);
+}
+.col-deepblue {
+	color: var(--deepblue);
+}
+.col-green {
+	color: var(--green);
+}
+.col-red {
+	color: var(--red);
+}
+
+/* A tag With Color */
+/* a[class*=col] {text-decoration: underline; text-underline-position : under;} */
+a.underline {
+	text-decoration: underline;
+	text-underline-position: under;
+}
+
+.font-lv0 {
+	font-size: var(--font-lv0);
+	font-weight: 700;
+}
+.font-lv1 {
+	font-size: var(--font-lv1);
+	font-weight: 700;
+}
+.font-lv2 {
+	font-size: var(--font-lv2);
+	font-weight: 700;
+}
+.font-lv3 {
+	font-size: var(--font-lv3);
+	font-weight: 700;
+}
+.font-lv4 {
+	font-size: var(--font-lv4);
+	font-weight: 700;
+}
+.font-lv5 {
+	font-size: var(--font-lv5);
+	font-weight: 500;
+}
+.font-lv6 {
+	font-size: var(--font-lv6);
+	font-weight: 500;
+}
+.font-lv7 {
+	font-size: var(--font-lv7);
+	font-weight: 500;
+}
+
+/* Border Style */
+.border-r {
+	border-right: 1px solid #aaaaaa !important;
+}
+
+/* Background Style */
+.bg-pri {
+	background: var(--pri);
+}
+.bg-blue {
+	background: var(--blue) !important;
+}
+.bg-dark {
+	background: #383838 !important;
+}
+.bg-gray {
+	background: #eeeeee !important;
+}
+.bg-white {
+	background: #ffffff !important;
+}
+.bg-lightblue {
+	background: #f7f9fc !important;
+}
+.bg-init {
+	background: transparent !important;
+}

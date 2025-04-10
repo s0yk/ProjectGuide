@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    /* Table Responsive */
+    @media (max-width: 1000px) {
+        .tbl-col.is-responsive {
+            width: 100%;
+        }
+        .tbl-col.is-responsive > table,
+        .tbl-col.is-responsive > table > thead,
+        .tbl-col.is-responsive > table > tbody,
+        .tbl-col.is-responsive > table th,
+        .tbl-col.is-responsive > table td,
+        .tbl-col.is-responsive > table tr {
+            display: block;
+        }
+        .tbl-col.is-responsive > table > thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        .tbl-col.is-responsive > table > tbody td {
+            border: none;
+            border-top: 1px solid #ccc;
+            text-align: left;
+            width: 100%;
+        }
+        .tbl-col.is-responsive > table > tbody tr {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tbl-col.is-responsive > table > tbody td:before {
+            content: '';
+            display: inline-flex;
+            align-items: center;
+            padding-left: 8px;
+            margin-right: 8px;
+            width: 80px;
+            height: 100%;
+            background-color: #e9e9e9;
+        }
+        .tbl-col.is-responsive > table > tbody td:before {
+            content: attr(data-title);
+        }
+
+        .tbl-col.is-responsive tr + tr {
+            margin-top: 16px;
+        }
+    }
+
+    /* Table Common */
+    table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    caption {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        border: 0;
+        clip: rect(0 0 0 0);
+    }
+    :is(.tbl-row, .tbl-col) > table th {
+        background-color: #e9e9e9;
+    }
+    :is(.tbl-row, .tbl-col) :is(th,td) {
+        height: 40px;
+        vertical-align: middle;
+    }
+    /* Table Col */
+    .tbl-col > table thead th {
+        border-top: 2px solid #333;
+        border-right: 1px solid #333;
+    }
+    .tbl-col > table tbody td {
+        border: 1px solid #333;
+        border-left: none;
+        text-align: center;
+    } 
+    .tbl-col > table tbody tr td:last-child,
+    .tbl-col > table thead tr th:last-child {
+        border-right: none;
+    }
+</style>
+<style>
+    .tlt {margin-bottom: 20px;}
+    .tlt:not(:first-of-type){margin-top: 20px;}
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title"><span class="cate"></span>Table Responsive Guide</h2>
+            <div class="dec">
+                <p>반응형 테이블을 제작하기 위해선 display를 block으로 변경해야합니다.</p>
+                <p>
+                    <code>data-title</code> 속성을 동적으로 추가해준 뒤 before로 content값을 
+                    연결해주어 제목을 대체해 보여줍니다.
+                </p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <div class="tlt">
+                    <b>- col-table > 상하좌우 반응형</b>
+                </div>
+                <!-- Table Col -->
+                <div class="tbl-col is-responsive">
+                    <table>
+                        <caption>테이블 설명</caption>
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">성별</th>
+                                <th scope="col">나이</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>김OO</td>
+                                <td>남자</td>
+                                <td>35</td>
+                            </tr>
+                            <tr>
+                                <td>이OO</td>
+                                <td>남자</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td>송OO</td>
+                                <td>여자</td>
+                                <td>29</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+            <div class="script-code-box language-javascript">
+                <div class="title-wrap">
+                    <h3 class="title">Java Script</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-js inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+    <script>
+        const table = {
+            responsiveTables : null,
+
+            init(){
+                responsiveTables = document.querySelectorAll('.tbl-col.is-responsive');
+                
+                this.getDataTitle(responsiveTables);
+            },
+            // 각 th값 저장
+            getDataTitle(responsiveTargets){
+                responsiveTargets.forEach(responsiveTarget => {
+                    const targetThs = responsiveTarget.querySelectorAll('thead tr th');
+                    const targetTrs = responsiveTarget.querySelectorAll('tbody tr');
+                    const targetThTexts = [];
+
+                    targetThs.forEach(targetTh => {
+                        targetThTexts.push(targetTh.innerText);
+                    })
+                    this.setDataTitle(targetThTexts, targetTrs);
+                })
+            },
+            // 각 th값 td에 dataTitle값으로 연결
+            setDataTitle(dataTitle, targetTrs){
+                // dataTitle = Array ['제목1', '제목2', '제목3']
+                targetTrs.forEach(targetTr => {
+                    // 각각 tr내의 td들 선택해서 담기
+                    const targetTds = targetTr.querySelectorAll('td');
+                    targetTds.forEach((td, index)=> {
+                        // 데이터 값이 있다면 각 값에 dataTitle을 순서대로 값 담기
+                        if(dataTitle[index]){
+                            td.setAttribute('data-title', dataTitle[index]);
+                        }
+                    })
+                })
+
+            }
+        }
+
+        // 테이블 초기실행
+        table.init();
+
+    </script>
+
+</body>
+</html>

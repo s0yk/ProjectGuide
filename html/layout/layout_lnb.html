@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="./resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script src="../../resources/js/sub_guide.js"></script>
+    <script defer src="../../resources/js/javascript_guide.js"></script>
+</head>
+<style>
+    .lnb {
+        width: 300px;
+        border-right: 1px solid #ddd;
+    }
+    .lnb .lnb-main-list {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+    }
+    .lnb .lnb-main-list > li {
+        display: flex;
+        flex-direction: column;
+    }
+    .lnb .lnb-main-list > li:last-child > a {
+        border-bottom: 1px solid #ddd;
+    }
+    .lnb .lnb-main-list > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 16px 8px;
+        font-weight: 700;
+        border-top: 1px solid #ddd;
+    }
+    .lnb .lnb-main-list > li + li > a {
+        border-bottom: 0;
+    }
+    .lnb .lnb-main-list li a:hover {
+        background-color: #eef2f7;
+    }
+    .lnb .lnb-main-list .lnb-sub-list {
+        display: none;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .lnb .lnb-main-list .lnb-sub-list > li {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .lnb .lnb-main-list .lnb-sub-list > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 12px 8px 12px 24px;
+    }
+    .lnb .lnb-main-list .lnb-sub-list .lnb-detail-list {
+        display: none;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .lnb .lnb-main-list .lnb-sub-list .lnb-detail-list  > li {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .lnb .lnb-main-list .lnb-sub-list .lnb-detail-list > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 8px 8px 8px 32px;
+    }
+    .lnb .lnb-main-list li a.is-open i {
+        transform: rotate(90deg);
+    }
+    .lnb .lnb-main-list li a.is-open {
+        color: mediumslateblue;
+        background-color: #eef2f7;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+    .lnb .lnb-main-list li a.is-open + .lnb-sub-list li:first-child a.is-open {
+        border-top: 0;
+    }
+</style>
+<style>
+    .container.has-lnb {
+        display: flex;
+        gap: 32px;
+    }
+    .container.has-lnb .ly-inner {
+        margin: 0;
+    }
+</style>
+<style>
+    /* Wrap */
+    #wrap {
+        max-width: 1440px;
+        width: 100%;
+        border: 1px solid #EEE;
+    }
+    /* Header */
+    #header {
+        height: 80px; 
+        background-color: azure;
+        text-align: center;
+        align-content: center;
+        font-size: 28px;
+        font-weight: 700;
+    }   
+    /* Container */
+    .container {
+        padding-top: 20px;
+        padding-bottom: 32px;
+        background-color: #fcfcfc;
+    }
+    /* Container Header */
+    .container-header {
+        text-align: center;
+    }
+    .container-header ~ * {
+        margin-top: 40px;
+    }
+    h2.container-header-tlt {
+        font-size: 32px;
+    }
+    p.container-header-desc {
+        margin-top: 8px;
+        font-size: 20px;
+    }
+    /* Breadcrumb */
+    .breadcrumb {
+        background-color: lightyellow; 
+        margin-bottom: 28px;
+        padding: 0 12px;
+    }
+    .breadcrumb > ul {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .breadcrumb > ul > li > a {
+        display: block;
+        height: 36px;
+        line-height: 36px;
+    }
+    /* Paging */
+    .paging {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .paging .paging-num {
+        display: flex;
+        gap: 8px;
+    }
+    .paging .paging-num > li > a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        aspect-ratio: 1;
+        border-radius: 4px;
+        background-color: #EEE;
+    }
+    .paging .paging-num > li.is-active > a {
+        background-color: cadetblue;
+        color: #FFF;
+    }
+    /* Footer */
+    #footer {
+        height: 100px;
+        background-color: aliceblue;
+        text-align: center;
+        align-content: center;
+        font-size: 28px;
+        font-weight: 700;
+    }
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title">
+                <span class="cate"></span>
+                Layout Guide - LNB
+            </h2>
+            <div class="dec">
+                <p>컨텐츠 내 왼쪽 구역에 메뉴를 넣은 구조입니다.</p>
+                <p><code>header</code>, <code>container > lnb, content</code>, <code>footer</code>로 나누어 퍼블리싱합니다.</p>
+                <p>각 내용의 의미에 맞게 시맨틱 마크업을 지향합니다. <br><b>예시) LNB: </b><code>aside</code></p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <section id="wrap">
+                <!-- Header -->
+                <header id="header">
+                    <nav>헤더</nav>
+                </header>
+                <!-- Main -->
+                <main id="main" class="container has-lnb">
+                    <!-- LNB -->
+                    <aside class="lnb">
+                        <ul class="lnb-main-list">
+                            <li>
+                                <a href="#" class="lnb-main-btn">메뉴 A <i class="ico ico-s ico-arrow-right"></i></a>
+                                <ul class="lnb-sub-list">
+                                    <li>
+                                        <a href="#" class="lnb-sub-btn">메뉴 A-1 <i class="ico ico-s ico-arrow-right"></i></a>
+                                        <ul class="lnb-detail-list">
+                                            <li><a href="#">메뉴 A-1-ㄱ</a></li>
+                                            <li><a href="#">메뉴 A-1-ㄴ</a></li>
+                                            <li><a href="#">메뉴 A-1-ㄷ</a></li>
+                                            <li><a href="#">메뉴 A-1-ㄹ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">메뉴 A-2</a></li>
+                                    <li><a href="#">메뉴 A-3</a></li>
+                                    <li><a href="#">메뉴 A-4</a></li>
+                                    <li><a href="#">메뉴 A-5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">메뉴 B</a></li>
+                            <li>
+                                <a href="#" class="lnb-main-btn">메뉴 C <i class="ico ico-s ico-arrow-right"></i></a>
+                                <ul class="lnb-sub-list">
+                                    <li><a href="#">메뉴 C-1</a></li>
+                                    <li><a href="#">메뉴 C-2</a></li>
+                                    <li>
+                                        <a href="#" class="lnb-sub-btn">메뉴 C-3 <i class="ico ico-s ico-arrow-right"></i></a>
+                                        <ul class="lnb-detail-list">
+                                            <li><a href="#">메뉴 C-3-ㄱ</a></li>
+                                            <li><a href="#">메뉴 C-3-ㄴ</a></li>
+                                            <li><a href="#">메뉴 C-3-ㄷ</a></li>
+                                            <li><a href="#">메뉴 C-3-ㄹ</a></li>
+                                            <li><a href="#">메뉴 C-3-ㅁ</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
+                    <!-- // LNB -->
+
+                    <div class="ly-inner">
+                        <!-- BreadCrumb -->
+                        <div class="breadcrumb">
+                            <ul>
+                                <li>BreadCrumb</li>
+                            </ul>
+                        </div>
+                        <div class="container-header">
+                            <h2 class="container-header-tlt">페이지 제목</h2>
+                            <p class="container-header-desc">페이지 설명글</p>
+                        </div>
+                        <!-- Contents -->
+                        <div class="contents">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate sint corrupti asperiores excepturi labore ratione perferendis ex velit magnam neque et dolores quae itaque, dolorem vel recusandae vitae ipsum.</p>
+                        </div>
+                    </div>
+                </main>
+            </section>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+            <div class="script-code-box language-javascript">
+                <div class="title-wrap">
+                    <h3 class="title">Java Script</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-js inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+    <script>
+        let lnbMainBtn = $('.lnb-main-btn');
+        let lnbSubBtn = $('.lnb-sub-btn');
+        $(lnbMainBtn).on('click', function () {
+            $(lnbSubBtn).siblings('.lnb-detail-list').slideUp();
+            $(lnbSubBtn).removeClass('is-open');
+            if ((!$(this).hasClass('is-open'))) {
+                $(lnbMainBtn).siblings('.lnb-sub-list').slideUp();
+                $(lnbMainBtn).removeClass('is-open');
+                $(this).addClass('is-open');
+                $(this).siblings('.lnb-sub-list').slideDown();
+            } else { 
+                $(this).removeClass('is-open');
+                $(this).siblings('.lnb-sub-list').slideUp();
+            }
+        });
+        $(lnbSubBtn).on('click', function () {
+            if ((!$(this).hasClass('is-open'))) {
+                $(lnbSubBtn).removeClass('is-open');
+                $(this).addClass('is-open');
+                $(this).siblings('.lnb-detail-list').slideDown();
+            } else { 
+                $(this).removeClass('is-open');
+                $(this).siblings('.lnb-detail-list').slideUp();
+            }
+        });
+    </script>
+</body>
+</html>

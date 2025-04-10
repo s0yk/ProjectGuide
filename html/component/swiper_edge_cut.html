@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script src="../../resources/js/sub_guide.js"></script>
+
+    <!-- SWIPER PLUGIN -->
+    <link rel="stylesheet" href="../../resources/css/swiper-bundle.min.css">
+    <script src="../../resources/js/swiper-bundle.min.js"></script>
+</head>
+<style>
+    /* Swiper Inner */
+    .my-swiper {
+        padding-left: 20px;
+    }
+    /* Swiper Content */
+    .my-swiper .swiper-slide > a {
+        display: block; 
+        height: 200px; 
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: center;
+        background: aliceblue;
+        align-content: center;
+        position: relative;
+    } 
+    .my-swiper .swiper-slide > a::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 45px;
+        height: 45px;
+        background: url(../../resources/images/ico/ico_circle_swiper_play_black.svg) no-repeat center / cover;
+    }
+    .my-swiper .swiper-slide > a > img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<style>
+    .mobile-wrap {
+        max-width: 400px;
+        height: 900px;
+        margin: 0 auto;
+        border: 1px solid #eee;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+        align-content: center;
+    }
+    .my-swiper .swiper-slide > a > img {
+        transition: all 0.3s ease-in-out;
+    }
+    .my-swiper .swiper-slide > a > img:hover {
+        filter: brightness(80%);
+    }
+</style>
+
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title">
+                <span class="cate"></span>
+                스와이퍼 엣지컷형1
+            </h2>
+            <div class="dec">
+                <p>스와이퍼 슬라이드 작업은 필수적으로 전용 css, js의 cdn 연결이 필요합니다.</p>
+                <p>swiper, swiper-wrapper, swiper-slide 클래스를 필수적으로 사용해야합니다.</p>
+                <p>잘리는 것을 보여지게 하기 위해선 옵션 중 slidePerView를 이용해 다음 슬라이드의 몇 %을 보여줄 지 환산하여 소수점으로 추가합니다.</p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <article class="mobile-wrap">
+                <div class="my-swiper">
+                    <div class="swiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#" target="_blank" title="새 창 열기">
+                                    <img src="../../resources/images/img/img_slide_example_0.jpg" alt="썸네일 이미지1">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" target="_blank" title="새 창 열기">
+                                    <img src="../../resources/images/img/img_slide_example_1.jpg" alt="썸네일 이미지2">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" target="_blank" title="새 창 열기">
+                                    <img src="../../resources/images/img/img_slide_example_2.jpg" alt="썸네일 이미지3">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" target="_blank" title="새 창 열기">
+                                    <img src="../../resources/images/img/img_slide_example_3.jpg" alt="썸네일 이미지4">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#" target="_blank" title="새 창 열기">
+                                    <img src="../../resources/images/img/img_slide_example_4.jpg" alt="썸네일 이미지5">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+            <div class="script-code-box language-javascript">
+                <div class="title-wrap">
+                    <h3 class="title">Java Script</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-js inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+    <script>
+    let  mySwiper = new Swiper('.my-swiper .swiper',{
+        slidesPerView : 2.2,
+        loop : true,
+        allowTouchMove : true, // 모바일 터치 이동 활성화
+        freeMode : true, // 애니메이션 시 끊기지 않고 자유롭게 설정
+        spaceBetween : 12,
+    })
+    </script>
+</body>
+</html>

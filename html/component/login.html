@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css" />
+    <link rel="stylesheet" href="../../resources/css/style.css" />
+
+    <!-- JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+    ></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    /* Common */
+    legend {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+    }
+    /* Form Common */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    select {
+        width: 100%;
+        display: inline-block;
+        height: 40px;
+        margin: 0;
+        background-color: white;
+        border: 1px solid gray;
+        border-radius: 6px;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+    /* Login Wrap */
+    .login-wrap {
+        width: 100%;
+    }
+    .login-wrap .form-btn > button {
+        width: 100%;
+        margin-top: 8px;
+    }
+    .login-wrap .form-group + .form-group {
+        margin-top: 12px;
+    }
+    .login-wrap .form-check {
+        margin-top: 12px;
+    }
+    .login-wrap .form-links {
+        margin-top: 20px;
+    }
+    .login-wrap .form-links > ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    /* Form Input */
+    .form-input input {
+        padding: 0 8px;
+    }
+    .form-input.password {
+        position: relative;
+    }
+    .form-input.password > button {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-input.password > input {
+        padding-right: 32px;
+    }
+    /* Form Group */
+    .form-group label + :is(.form-input) {
+        margin-top: 8px;
+    }
+    /* Btn Styling */
+    .btn {
+        display: inline-block;
+        padding: 12px 16px; 
+    }
+    .btn-lg {
+        padding: 16px 24px;
+    }
+    .btn-pri {
+        border-radius: 8px;
+        transition: all 300ms ease-in-out;
+        background-color: #003675;
+        color: #fff;
+    }
+    .btn:hover, .btn:active {
+        background-color: #002e63;
+    }
+</style>
+<style>
+    #guide-contents > div {
+        max-width: 400px;
+    }
+</style>
+
+<body>
+    <div id="guide-wrap">
+    <header id="guide-header">
+        <h2 class="title">
+        <span class="cate"></span>
+            Login Guide
+        </h2>
+        <div class="dec">
+            <p>로그인 페이지를 만들 시 form 관련 태그들을 사용하여 시멘틱하게 마크업해야합니다.</p>
+            <p>추가로, 마크업 시 유효성 체크 등을 대응해 에러메시지를 마크업 해야합니다.</p>
+            <p>FORM 태그는 개발 형식에 유무가 달라질 수 있습니다.</p>
+        </div>
+    </header>
+    <section id="guide-contents">
+        <div>
+            <section class="login-wrap">
+                <form method="post" action="서버URL">
+                    <fieldset>
+                        <legend>로그인 폼</legend>
+                        <div class="form-group">
+                            <label for="login-id">아이디</label>
+                            <div class="form-input">
+                                <input type="text" id="login-id" placeholder="아이디를 입력하세요" autocomplete="on">
+                            </div>    
+                        </div>
+                        <div class="form-group">
+                            <label for="login-pw">비밀번호</label>
+                            <div class="form-input password">
+                                <input type="password" id="login-pw" placeholder="비밀번호를 입력하세요">
+                                <button class="btn-pw-visible" type="button" aria-label="비밀번호 표시">
+                                    <i class="ico ico-l ico-pw-visible-off"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <div class="chk-box">
+                                <input type="checkbox" id="id-chk">
+                                <label for="id-chk">아이디 저장</label>
+                            </div>
+                        </div>
+                        <div class="form-btn">
+                            <button type="button" class="btn btn-lg btn-pri">로그인</button>
+                        </div>
+                        <div class="form-links">
+                            <ul>
+                                <li><a href="#">아이디 찾기</a></li>
+                                <li><a href="#">비밀번호 찾기</a></li>
+                                <li><a href="#">회원가입</a></li>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+    </section>
+    <section id="guide-code">
+        <div class="html">
+        <div class="title-wrap">
+            <h3 class="title">HTML</h3>
+            <button type="button" class="copy-btn">COPY</button>
+        </div>
+        <code class="language-html inner-code"> </code>
+        </div>
+        <div class="css">
+            <div class="title-wrap">
+                <h3 class="title">CSS</h3>
+                <button type="button" class="copy-btn">COPY</button>
+            </div>
+            <code class="language-css inner-code">
+            </code>
+        </div>
+        <div class="script-code-box language-javascript">
+        <div class="title-wrap">
+            <h3 class="title">Java Script</h3>
+            <button type="button" class="copy-btn">COPY</button>
+        </div>
+        <code class="language-js inner-code"> </code>
+        </div>
+    </section>
+    </div>
+    <script>
+        $(document).on('click', '.btn-pw-visible', function(){
+            // 연결된 요소 type 바꾸기
+            let input = $(this).siblings('input');
+            let inputType = input.attr('type');
+            let btnIcon = $(this).find('i');
+            // password
+            if (input.val()){
+                if (inputType == 'password'){
+                    btnIcon.removeClass('ico-pw-visible-off');
+                    btnIcon.addClass('ico-pw-visible-on');
+                    input.attr('type', 'text');
+                } else {
+                    btnIcon.removeClass('ico-pw-visible-on');
+                    btnIcon.addClass('ico-pw-visible-off');
+                    input.attr('type', 'password');
+                }
+            } 
+        })
+    </script>
+</body>
+</html>
+<!-- $('.btn-pw-visible').on('click', function(){
+    let inputType = $(this).siblings('input').attr('type');
+    let btnIcon = $(this).find('i');
+
+    if (inputType === 'password'){
+        btnIcon.removeClass('ico-pw-visible-off');
+        btnIcon.addClass('ico-pw-visible-on');
+    } else {
+        btnIcon.removeClass('ico-pw-visible-on');
+        btnIcon.addClass('ico-pw-visible-off');
+    }
+}) -->

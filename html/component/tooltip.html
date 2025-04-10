@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    .tooltip {
+        position: relative;
+    }
+    .tooltip-content {
+        display: none;
+        z-index: 1;
+        position: absolute;
+        width: var(--width, 192px);
+        text-align: left;
+        padding: 10px;
+        color: #fff;
+        background-color: #ffc36a;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 12px;
+        top: 100%;
+    }
+    .tooltip .tooltip-tlt::after{
+        content:'ⓘ';
+        display:inline-block;
+        width:16px;height:16px;
+        vertical-align:middle;
+        margin: 0 0 10px 0;
+    }
+    .tooltip-content::before{
+        content:'';
+        display:inline-block;
+        width:14px;
+        height:12px;
+        position:absolute;
+        left: 20px;
+        top: -10px;
+        background:url(../../resources/images/ico/ico_tooltip_arrow.svg) no-repeat center;
+    } 
+    .tooltip:hover .tooltip-content{
+        display:block;
+    }
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title">
+                <span class="cate"></span>
+                Tooltip Guide - Hover
+            </h2>
+            <div class="dec">
+                <p>툴팁의 경우 
+                    <code>relative</code>와
+                    <code>absolute</code>를 이용해 제작합니다
+                </p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <div class="tooltip">
+                    <span class="tooltip-tlt">상세보기</span>
+                    <div class="tooltip-content">
+                        <ul>
+                            <li>툴팁 목록1</li>
+                            <li>툴팁 목록2</li>
+                            <li>툴팁 목록3</li>
+                            <li>툴팁 목록4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

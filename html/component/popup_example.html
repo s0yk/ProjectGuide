@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* Popup Common */
+    #popup :is(.popup-head, .popup-body, .popup-foot){
+        padding: 0 20px;
+    }
+    #popup .popup-head {
+        height: 60px;
+        background-color: cadetblue;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #popup .popup-head > h2 {
+        font-size: 28px;
+    }
+    #popup .popup-body {
+        padding-top: 20px;
+    }
+    #popup .popup-body .popup-body-detail {
+        width: 100%;
+        height: 400px;
+        background-color: aliceblue;
+    }
+</style>
+<body>
+    <div id="popup">
+        <div class="popup-head">
+            <h2>팝업 제목을 작성해주세요</h2>
+            <button type="button" aria-label="닫기" onclick="window.close()">
+                <i class="ico ico-l ico-close"></i>
+            </button>
+        </div>
+        <div class="popup-body">
+            <p>팝업 상세 내용</p>
+            <div class="popup-body-detail"></div>
+        </div>
+        <div class="popup-foot">
+            <p>DOMcontentLoaded를 이용해 구현하세요</p>
+        </div>
+    </div>
+</body>
+</html>

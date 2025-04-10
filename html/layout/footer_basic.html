@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+</head>
+<style>
+    /* Common */
+    .is-point {
+        font-weight: 700;
+        color: #003675;
+    }
+    .inner {
+        max-width: 1280px;
+        width: 100%;
+    }
+    footer .inner {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 20px;
+        background-color: #f5f5f5;
+    }         
+    /* Footer Quick */
+    footer .footer-quick-inner {
+        display: flex;
+        max-width: 1280px;
+        padding: 0 20px;
+        border-top: 1px solid #CCC;
+        border-bottom: 1px solid #CCC;
+    }
+    footer .footer-related {
+        position: relative;
+        flex-grow: 1;
+    }
+    footer .footer-related-content {
+        display: none;
+        background-color: #FFF;
+        border: 1px solid #CCC;
+        border-bottom: 0;
+        overflow: hidden;
+    }
+    footer .footer-related-list {
+        transition: height 500ms ease-in-out;
+    }
+    footer .footer-related-list > li > a {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 8px;
+    }
+    footer .footer-related.is-active .footer-related-content {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: calc(100% + 1px);
+        width: 100%;
+        overflow: auto;
+        max-height: 200px;
+        z-index: 9999;
+    }  
+    footer .footer-related i.ico-minus {
+        display: none;
+    }
+    footer .footer-related.is-active i.ico-minus {
+        display: block;
+    }
+    footer .footer-related.is-active i.ico-more {
+        display: none;
+    }
+    footer .footer-related-trigger {
+        width: 100%;
+        height: 44px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-left: 1px solid #CCC;
+        padding: 0 16px;
+    }
+    footer .footer-related:last-child > .footer-related-trigger {
+        border-right: 1px solid #CCC;
+    }
+
+    /* Footer Content */
+    footer .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+    }
+    footer .footer-info address {
+        margin-bottom: 24px;
+    }
+    footer .footer-info .info-cs li + li {
+        margin-top: 16px;
+    }
+    footer .footer-link {
+        flex-basis: 302px;
+        flex-shrink: 0;
+    }
+    footer .footer-link-list {
+        margin-bottom: 24px;
+    }
+    footer .footer-link-list li + li {
+        margin-top: 8px;
+    }
+    footer .footer-link-list li > a {
+        display: inline-flex;
+        align-items: center;
+        height: 40px;
+        gap: 4px;
+        font-weight: 700;
+    }
+    footer .footer-sns-list > li > a {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    footer .footer-sns-list {
+        display: flex;
+        gap: 8px;
+    }
+    footer .footer-sns-list > li > a.instagram {
+        background-image: url(../../resources/images/logo/logo_instagram.svg);
+    }
+    footer .footer-sns-list > li > a.youtube {
+        background-image: url(../../resources/images/logo/logo_youtube.svg);
+    }
+    footer .footer-sns-list > li > a.twitter {
+        background-image: url(../../resources/images/logo/logo_twitter.svg);
+    }
+    footer .footer-sns-list > li > a.facebook {
+        background-image: url(../../resources/images/logo/logo_facebook.svg);
+    }
+    footer .footer-sns-list > li > a.naverblog {
+        background-image: url(../../resources/images/logo/logo_naverblog.svg);
+    }
+    /* Footer Bottom */
+    footer .footer-bottom {
+        padding-top: 8px;
+        border-top: 1px solid #CCC;
+    }
+    footer .footer-bottom .footer-bottom-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    footer .footer-bottom .footer-bottom-text .copy-right {
+        font-size: 15px;
+        color: #555;   
+    }
+    footer .footer-bottom .footer-bottom-text .footer-menu-list {
+        display: flex;
+    }
+    footer .footer-bottom .footer-bottom-text .footer-menu-list > li + li {
+        margin-left: 8px;
+    }
+    footer .footer-banner {
+        padding: 8px 16px;
+        border-radius: 6px;
+        background-color: #FFF;
+        font-size: 15px;
+    }
+    footer .footer-banner img {
+        margin-right: 8px;
+    }
+</style>
+<style>
+    footer {
+        margin-top: 80px;
+    }
+</style>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header">
+            <h2 class="title">
+                <span class="cate"></span>
+                Footer Guide - Basic
+            </h2>
+            <div class="dec">
+                <p>푸터는 화면을 구성하는 가장 마지막 요소로 헤더와 본문에서 원하는 정보를 찾지 못하였거나 사이트 구조 탐색 중에 길을 잃은 사용자들이 대면하게 되는 정보이다.</p>
+                <p>따라서 푸터에는 사용자가 서비스를 탐색할 수 있는 추가적인 수단, 문제를 해결하는 데 참고할 수 있는 유용한 링크가 제공되어야 한다.</p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <footer id="footer">
+                <!-- Footer quick -->
+                <div class="footer-quick">
+                    <div class="footer-quick-inner">
+                        <div class="footer-related">
+                            <button type="button" class="footer-related-trigger">
+                                관련 사이트 모음1
+                                <i class="ico ico-m ico-more"></i>
+                                <i class="ico ico-m ico-minus"></i>
+                            </button>
+                            <div class="footer-related-content">
+                                <ul class="footer-related-list">
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크1</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크2</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크3</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크4</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크5</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크6</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크7</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크8</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-related">
+                            <button type="button" class="footer-related-trigger">
+                                관련 사이트 모음2
+                                <i class="ico ico-m ico-more"></i>
+                                <i class="ico ico-m ico-minus"></i>
+                            </button>
+                            <div class="footer-related-content">
+                                <ul class="footer-related-list">
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크1</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크2</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크3</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-related">
+                            <button type="button" class="footer-related-trigger">
+                                관련 사이트 모음3
+                                <i class="ico ico-m ico-more"></i>
+                                <i class="ico ico-m ico-minus"></i>
+                            </button>
+                            <div class="footer-related-content">
+                                <ul class="footer-related-list">
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크1</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크2</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크3</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-related">
+                            <button type="button" class="footer-related-trigger">
+                                관련 사이트 모음4
+                                <i class="ico ico-m ico-more"></i>
+                                <i class="ico ico-m ico-minus"></i>
+                            </button>
+                            <div class="footer-related-content">
+                                <ul class="footer-related-list">
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크1</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크2</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크3</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크4</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크5</a>
+                                    </li>
+                                    <li class="footer-related-item">
+                                        <a href="#">관련 사이트 링크6</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="footer-logo">
+                        <img src="../../resources/images/logo/logo_apostille.svg" alt="아포스티유">
+                    </div>
+                    <div class="footer-content">
+                        <div class="footer-info">
+                            <address>(26464) 강원특별자치도 원주시 건강로 32(반곡동) 국민건강보험공단</address>
+                            <ul class="info-cs">
+                                <li>
+                                    <strong>대표전화 1577-1000</strong>
+                                    <span>(유료), 평일 09시~18시</span>
+                                </li>
+                                <li>
+                                    <strong>해외이용 82-33-811-2001</strong>
+                                    <span>(유료), 평일 09시~18시</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-link">
+                            <div>
+                                <ul class="footer-link-list">
+                                    <li class="footer-link-item">
+                                        <a href="#">
+                                            찾아오시는 길
+                                            <i class="ico ico-m ico-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            이용안내
+                                            <i class="ico ico-m ico-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            직원검색
+                                            <i class="ico ico-m ico-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="footer-sns-list">
+                                    <li class="footer-sns-item">
+                                        <a href="#" class="instagram" target="_blank">
+                                            <span class="sr-only">인스타그램</span>
+                                        </a>
+                                    </li>
+                                    <li class="footer-sns-item">
+                                        <a href="#" class="youtube" target="_blank">
+                                            <span class="sr-only">유튜브</span>
+                                        </a>
+                                    </li>
+                                    <li class="footer-sns-item">
+                                        <a href="#" class="twitter" target="_blank">
+                                            <span class="sr-only">트위터</span>
+                                        </a>
+                                    </li>
+                                    <li class="footer-sns-item">
+                                        <a href="#" class="facebook" target="_blank">
+                                            <span class="sr-only">facebook</span>
+                                        </a>
+                                    </li>
+                                    <li class="footer-sns-item">
+                                        <a href="#" class="naverblog" target="_blank">
+                                            <span class="sr-only">naverblog</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="footer-bottom-text">
+                            <ul class="footer-menu-list">
+                                <li class="footer-menu-item">
+                                    <a class="is-point" href="#">개인정보처리방침</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">저작권 정책</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">웹 접근성 품질인증 마크 획득</a>
+                                </li>
+                            </ul>
+                            <p class="copy-right">
+                                @ 2025 ITPUB Service. All rights reserved.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="footer-banner">
+                        <img src="../../resources/images/logo/logo_mohw.svg" alt="보건복지부">
+                        이 누리집은 보건복지부 산하기관 누리집입니다.   
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+            <div class="script-code-box language-javascript">
+                <div class="title-wrap">
+                    <h3 class="title">Java Script</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-js inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+    <script>
+        const relatedSites = {
+            relatedTriggers : null,
+
+            init(){
+                this.relatedTriggers = document.querySelectorAll('.footer-related-trigger');
+                this.setUpTriggers();
+            },
+            setUpTriggers(){
+                this.relatedTriggers.forEach((trigger)=> {
+                    // 클릭 시 부모요소에 클래스 추가
+                    trigger.addEventListener('click', (e) => {
+                        // 클릭 요소 active 추가
+                        const clickedTriggerWrap = trigger.parentElement;
+                        const triggerWraps = document.querySelectorAll('.footer-related');
+                        const triggerLists = document.querySelectorAll('.footer-related-list')
+                        const clickedTriggerList = clickedTriggerWrap.querySelector('.footer-related-list');
+
+                        if(!clickedTriggerWrap.classList.contains('is-active')){
+                             // 화살표 함수를 통해 Triggers 인스턴스 접근
+                            this.relatedTriggers.forEach((t) => {
+                                t.removeAttribute('title');
+                            })
+                            // 모든 요소 active 제거
+                            triggerWraps.forEach((triggerWrap) => {
+                                triggerWrap.classList.remove('is-active');
+                            });
+                            // 클릭 요소에 선택됨 title 추가 (접근성), 액티브 클래스 추가
+                            trigger.setAttribute('title', '선택됨');
+                            clickedTriggerWrap.classList.add('is-active');
+
+                            triggerLists.forEach((triggerList) => {
+                                triggerList.style.height = 0;
+                                triggerList.style.overflow = 'hidden';
+                            })
+
+                            // 클릭 요소 콘텐츠 높이 계산
+                            clickedTriggerList.style.height = clickedTriggerList.scrollHeight + 'px';
+                        } else {
+                            // 이미 active 된 요소 일 경우
+                            clickedTriggerWrap.classList.remove('is-active');
+                            clickedTriggerWrap.removeAttribute('title');
+
+                            // 클릭 요소 콘텐츠 높이 계산
+                            clickedTriggerList.style.height = 0;
+                        }
+                    })
+                })
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            relatedSites.init()
+        });
+    </script>
+</body>
+</html>

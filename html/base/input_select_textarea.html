@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITPUB :: Publishing Guide</title>
+
+    <meta property="og:image" content="./resources/images/img/thumnail.png">
+    <meta property="og:title" content="아이티펍 프로젝트 가이드">
+    <meta property="og:description" content="ITPUB Project Publishing Guide">
+
+    <link rel="icon" href="../../resources/images/img/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../resources/css/reset.css">
+    <link rel="stylesheet" href="../../resources/css/guide.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
+
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/prism.js"></script>
+    <script  src="../../resources/js/sub_guide.js"></script>
+
+    <style>
+        /* Form Common */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            display: inline-block;
+            height: 40px;
+            margin: 0;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 6px;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        /* Input Num Reset */ 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Input */
+        .form-input {
+            max-width: var(--mxw, 100%);
+        }
+        .form-input input {
+            padding: 0 8px;
+        }
+        /* form-input search */
+        .search.form-input {
+            position: relative;
+        }
+        .search.form-input input {
+            padding-right: 32px;
+        }
+        .search.form-input button {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            transform: translateY(-50%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Select */
+        .form-select {
+            max-width: var(--mxw, 100%);
+            min-width: 100px;
+        }
+        select {
+            appearance: none;
+            background-image: url(../../resources/images/ico/ico_arrow_down.svg);
+            background-position: right 8px center;
+            background-size: 16px auto;
+            background-repeat: no-repeat;
+            padding: 0 32px 0 8px;
+        }
+        /* Form Group */
+        :is(.form-input, .form-select) label + :is(input, select){
+            margin-top: 8px;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+        /* Form Group Equal */
+        .form-group :is(.form-input, .form-select){
+            flex: 1;
+        }
+        /* 
+        Form Group Not Equal
+
+        NOTE : 기본값이 flex : 1이기 때문에 width가 변경되어야 하는 요소에만
+        flex grow를 0으로 초기화 + flex-basis(최소값) 설정
+        */
+        .form-group.email .form-input {
+            /* 남은 공간 차지 X */
+            /* 크기가 줄어들 시 그에 맞게 줄어들기 O */
+            flex: 0 1 160px;
+        }
+        .form-group.phone .form-select {
+            flex: 0 1 80px;
+            min-width: fit-content;
+        }
+        /* Form Textarea */
+        .form-textarea textarea {
+            width: 100%;
+            resize: none;
+            padding: 16px;
+            border: 1px solid gray;
+            height: var(--height, 400px);
+        }
+    </style>
+    <style>
+        .form-group {
+            padding: 20px;
+            background-color: aliceblue;
+            border-radius: 8px;
+            max-width: var( --mxw,532px);
+        }
+        .form-textarea {
+            width: 800px;
+        }
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            background-color: cadetblue;
+            color: white;
+            height: 40px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="guide-wrap">
+        <header id="guide-header" class="base">
+            <h2 class="title"><span class="cate"></span>Input, Select Guide</h2>
+            <div class="dec">
+                <p>인풋과 셀렉트 커스텀은 브라우저 기본 스타일을 <code>appearance: none</code>을 통해 제거 후 진행합니다.</p>
+                <p><code>textarea</code>의 경우 필수적으로 <code>resize: none</code>을 활성화 시켜주어야 합니다.</p>
+            </div>
+        </header>
+        <section id="guide-contents">
+            <div>
+                <div class="tlt">
+                    <b>- Input</b>
+                </div>
+                <!-- Input -->
+                <div class="form-input">
+                    <input type="text" placeholder="기본형">
+                </div>
+                <div class="form-input">
+                    <input type="password" placeholder="패스워드">
+                </div>
+                <div class="form-input">
+                    <input type="email" placeholder="이메일">
+                </div>
+                <!-- Input Search -->
+                <div class="form-input search">
+                    <input type="text" placeholder="검색어를 입력하세요.">
+                    <button type="button">
+                        <i class="ico ico-m ico-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="tlt">
+                    <b>- Select</b>
+                </div>
+                <!-- Select -->
+                <div class="form-select">
+                    <select>
+                        <option value="">Default</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="tlt">
+                    <b>- Form group</b>
+                </div>
+                <!-- Label Combo -->
+                <div class="form-input">
+                    <label for="1">라벨1</label>
+                    <input type="text" id="1" placeholder="입력하세요">
+                </div>
+            </div>
+            <div>
+                <!-- Form Group Equal -->
+                <div class="tlt">
+                    <b>- Form 균등 배치 - email</b>
+                </div>
+                <div class="form-group">
+                    <div class="form-input">
+                        <input type="text" id="3" placeholder="입력하세요">
+                    </div>
+                    <div class="form-input">
+                        <input type="text" id="4" placeholder="입력하세요">
+                    </div>
+                    <div class="form-select">
+                        <select id="5">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- Form not Equal -->
+                <div class="tlt">
+                    <b>- Form 불규칙 배치 - email</b>
+                </div>
+                <div class="form-group email">
+                    <div class="form-input">
+                        <input type="email">
+                    </div>
+                    <span>@</span>
+                    <div class="form-input">
+                        <input type="text">
+                    </div>
+                    <div class="form-select">
+                        <select>
+                            <option value="naver">naver.com</option>
+                            <option value="daum">daum.net</option>
+                            <option value="nate">nate.net</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="tlt">
+                    <b>- Form 불규칙 배치 - phone</b>
+                </div>
+                <div class="form-group phone">
+                    <div class="form-select">
+                        <select>
+                            <option value="010">010</option>
+                            <option value="001">001</option>
+                            <option value="011">011</option>
+                        </select>
+                    </div>
+                    <span>-</span>
+                    <div class="form-input">
+                        <input type="number">
+                    </div>
+                    <span>-</span>
+                    <div class="form-input">
+                        <input type="number">
+                    </div>
+                    <button type="button" class="btn">
+                        휴대전화 인증
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="tlt">
+                    <b>- Form Textarea</b>
+                </div>
+                <div class="form-textarea">
+                    <textarea cols="30" rows="5" placeholder="내용을 간단히 적어주세요."></textarea>
+                </div>
+            </div>
+        </section>
+        <section id="guide-code">
+            <div class="html">
+                <div class="title-wrap">
+                    <h3 class="title">HTML</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-html inner-code">
+                </code>
+            </div>
+            <div class="css">
+                <div class="title-wrap">
+                    <h3 class="title">CSS</h3>
+                    <button type="button" class="copy-btn">COPY</button>
+                </div>
+                <code class="language-css inner-code">
+                </code>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
